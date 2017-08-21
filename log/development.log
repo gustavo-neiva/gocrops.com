@@ -36,3 +36,84 @@ Processing by PagesController#home as HTML
 Completed 200 OK in 7218ms (Views: 7216.3ms | ActiveRecord: 0.0ms)
 
 
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1853325959589537825)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddOmniauthToUsers (20170821213713)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.7ms)[0m  [1m[35mALTER TABLE "users" ADD "provider" character varying[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "users" ADD "uid" character varying[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "users" ADD "facebook_picture_url" character varying[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "users" ADD "first_name" character varying[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "users" ADD "last_name" character varying[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "users" ADD "token" character varying[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "users" ADD "token_expiry" timestamp[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170821213713"]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_advisory_unlock(1853325959589537825)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2017-08-21 18:53:43 -0300
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.8ms)
+  Rendered shared/_navbar.html.erb (12.6ms)
+  Rendered shared/_flashes.html.erb (0.5ms)
+Completed 200 OK in 236ms (Views: 234.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-08-21 18:53:45 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (4.3ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (59.8ms)
+  Rendered shared/_navbar.html.erb (9.7ms)
+  Rendered shared/_flashes.html.erb (1.0ms)
+Completed 200 OK in 131ms (Views: 104.2ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2017-08-21 18:53:47 -0300
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-08-21 18:54:00 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.1ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (14.1ms)
+  Rendered shared/_navbar.html.erb (1.7ms)
+  Rendered shared/_flashes.html.erb (0.6ms)
+Completed 200 OK in 42ms (Views: 40.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2017-08-21 18:54:03 -0300
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-08-21 18:55:21 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.1ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (7.7ms)
+  Rendered shared/_navbar.html.erb (1.4ms)
+  Rendered shared/_flashes.html.erb (0.4ms)
+Completed 200 OK in 30ms (Views: 29.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2017-08-21 18:55:26 -0300
+Started GET "/" for 127.0.0.1 at 2017-08-21 18:57:34 -0300
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.4ms)
+  Rendered shared/_navbar.html.erb (1.7ms)
+  Rendered shared/_flashes.html.erb (0.3ms)
+Completed 200 OK in 25ms (Views: 23.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-08-21 18:57:37 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.8ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (6.4ms)
+  Rendered shared/_navbar.html.erb (2.5ms)
+  Rendered shared/_flashes.html.erb (0.5ms)
+Completed 200 OK in 29ms (Views: 27.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2017-08-21 18:57:38 -0300
