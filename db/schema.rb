@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170821213713) do
+ActiveRecord::Schema.define(version: 20170822152820) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,6 +28,10 @@ ActiveRecord::Schema.define(version: 20170821213713) do
     t.date "harvest_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "production"
+    t.string "pictures"
+    t.boolean "transport"
+    t.text "description"
     t.index ["product_id"], name: "index_crops_on_product_id"
     t.index ["user_id"], name: "index_crops_on_user_id"
   end
@@ -61,6 +65,14 @@ ActiveRecord::Schema.define(version: 20170821213713) do
     t.string "last_name"
     t.string "token"
     t.datetime "token_expiry"
+    t.string "farm_location"
+    t.string "farm_name"
+    t.string "farm_certification"
+    t.integer "farm_size"
+    t.string "phone"
+    t.text "bio"
+    t.string "avatar"
+    t.string "farm_picture"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
