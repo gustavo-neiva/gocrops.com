@@ -10,7 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170822171645) do
+
+ActiveRecord::Schema.define(version: 20170822173213) do
+
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,7 +30,7 @@ ActiveRecord::Schema.define(version: 20170822171645) do
     t.date "harvest_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "production"
+    t.float "production"
     t.string "pictures"
     t.boolean "transport"
     t.text "description"
@@ -76,7 +78,7 @@ ActiveRecord::Schema.define(version: 20170822171645) do
     t.string "farm_location"
     t.string "farm_name"
     t.string "farm_certification"
-    t.integer "farm_size"
+    t.float "farm_size"
     t.string "phone"
     t.text "bio"
     t.string "avatar"
