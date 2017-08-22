@@ -3,7 +3,7 @@ class CropsController < ApplicationController
     before_action :set_user, only: [:edit, :update, :show, :destroy]
 
     def index
-      @crops = Crop.all
+      @crops = current_user.crops
     end
 
     def new
