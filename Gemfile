@@ -9,6 +9,7 @@ gem 'puma'
 gem 'rails', '5.1.3'
 gem 'redis'
 gem 'omniauth-facebook'
+gem 'open-weather'
 
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass'
