@@ -1,43 +1,27 @@
 class Profile::UsersController < ApplicationController
 
-  namespace :profile do
-    resources :users
-  end
-
-  before_action :set_profile, only: [:edit, :update]
-
-  def profile
-    @user = User.find(params[:id])
-  end
-
-  def new
-    @profile = Profile.new
-  end
+  before_action :set_user, only: [:edit, :update, :show]
 
   def edit
   end
 
   def update
-    @profile.update(profile_params)
+    @user.update(user_params)
     redirect_to dashboard_path
   end
 
-  def create
-    @profile = Profile.new(profile_params)
-    @profile.user_id = current_user.id
-    if @profile.save
-      redirect_to dasbhoard_path
-    else
-      render 'new'
-    end
+  def show
   end
+
 
   private
 
 
-  def set_profile
-    @profile = Profile.find(params[:id])
+  def set_user
+    @user = User.find(params[:id])
   end
 
-
+  def user_params
+    params.require(:user).permit(:first_name, :last_name, :facebook_picture_url)
+  end
 end
