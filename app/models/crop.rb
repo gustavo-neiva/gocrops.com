@@ -5,7 +5,7 @@ class Crop < ApplicationRecord
   validates :user_id, uniqueness: { scope: :product_id }
   validate :validate_date_in_present
 
-  mount_uploader :pictures, CropsUploader
+  mount_uploader :pictures, PictureUploader
 
   def validate_date_in_present
     if harvest_date.present? && harvest_date < Date.today
