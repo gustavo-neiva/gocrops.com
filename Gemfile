@@ -9,6 +9,8 @@ gem 'puma'
 gem 'rails', '5.1.3'
 gem 'redis'
 gem 'omniauth-facebook'
+gem 'cloudinary'
+gem 'carrierwave', '~> 0.11.2'
 
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass'
