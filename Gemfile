@@ -11,10 +11,10 @@ gem 'redis'
 gem 'omniauth-facebook'
 
 gem 'autoprefixer-rails'
-gem 'bootstrap-sass'
 gem 'font-awesome-sass'
 gem 'jquery-rails'
 gem 'sass-rails'
+gem 'sassc-rails'
 gem 'simple_form'
 gem 'uglifier'
 
