@@ -5,6 +5,10 @@ class ApplicationController < ActionController::Base
   before_action :authenticate_user!
   before_action :get_weather_data
 
+  def after_sign_in_path_for(resource)
+    request.env['omniauth.origin'] || stored_location_for(resource) || dashboard_path
+  end
+
   private
 
   def get_weather_data
@@ -12,7 +16,6 @@ class ApplicationController < ActionController::Base
     if session[:weather].nil? && current_user && current_user.farm_location
       session[:weather] = OpenWeather::Current.city(current_user.farm_location, options)
     end
-    # reset_session
   end
 
 end
