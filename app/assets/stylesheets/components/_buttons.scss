@@ -1,6 +1,6 @@
 .btn-cta {
   color: $background-super-light;
-  background-color: #34ab1a;
+  background-color: $primary-color;
   display: inline-block;
   padding: 1em;
   width: 100%;
@@ -9,4 +9,8 @@
   font-weight: bold;
   text-align: center;
   text-transform: uppercase;
+}
+
+.btn-cta:hover {
+  background-color: darken($primary-color, 20%)
 }
