@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  get 'dashboard', to: 'dashboard#index'
+
+  get 'dashboard/crops'
+
+  get 'dashboard/profile'
+
   devise_for :users,
   controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
   root to: 'pages#home'
