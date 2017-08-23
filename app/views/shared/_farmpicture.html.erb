@@ -1,0 +1,5 @@
+<%= simple_form_for(@user) do |f| %>
+  <%= f.input :farm_picture %>
+  <%= f.input :farm_picture_cache, as: :hidden %>
+  <%= f.submit %>
+<% end %>

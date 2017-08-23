@@ -23,6 +23,7 @@ categories.each_with_index do |category, index|
   category_new.save!
   products[index].each do |product|
     product_new = Product.new(name: product, category_id: category_new.id)
+    product_new.save!
   end
 end
 
