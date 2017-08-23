@@ -22,6 +22,6 @@ class Profile::UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:avatar, :farm_picture, :first_name, :last_name, :facebook_picture_url)
+    params.require(:user).permit(:first_name, :last_name, :facebook_picture_url, :farm_location, :farm_certification, :farm_size, :phone, :bio, :avatar, :farm_picture)
   end
 end
