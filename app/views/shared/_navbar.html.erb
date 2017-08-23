@@ -10,9 +10,8 @@
     <% if user_signed_in? %>
 
       <!-- Links when logged in -->
-      <%#= link_to "Features", "#", class: "navbar-wagon-item navbar-wagon-link" %>
-      <%#= link_to "About", "#", class: "navbar-wagon-item navbar-wagon-link" %>
       <%= link_to "Dashboard", profile_users_path, class: "btn-primary-cta" %>
+      <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "navbar-wagon-item navbar-wagon-link" %>
 
     <% else %>
       <!-- Login link (when logged out) -->
