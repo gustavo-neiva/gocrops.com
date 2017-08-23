@@ -8,6 +8,7 @@ class User < ApplicationRecord
   has_many :crops
 
   mount_uploader :avatar, AvatarUploader
+  mount_uploader :farm_picture, FarmPictureUploader
 
   def self.find_for_facebook_oauth(auth)
      user_params = auth.slice(:provider, :uid)
