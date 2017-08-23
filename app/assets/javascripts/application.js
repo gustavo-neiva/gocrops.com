@@ -3,5 +3,5 @@
 //= require bootstrap
 //= require cable
 
-// We can't use require if ActiveAdmin
+// We can't use require with ActiveAdmin
 // require_tree .
