@@ -10,7 +10,7 @@
     <% if user_signed_in? %>
 
       <!-- Links when logged in -->
-      <%= link_to "Dashboard", profile_users_path, class: "btn-primary-cta" %>
+      <%= link_to "Dashboard", dashboard_path, class: "btn-primary-cta" %>
       <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "navbar-wagon-item navbar-wagon-link" %>
 
     <% else %>
