@@ -3,6 +3,7 @@ class Profile::UsersController < ApplicationController
   before_action :set_user, only: [:edit, :update, :show]
 
   def edit
+    @user = current_user
   end
 
   def update
