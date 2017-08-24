@@ -1,0 +1,35 @@
+// USER PROFILE STYLES
+
+.box-section {
+	margin-bottom: 15px;
+}
+
+.box-section__padding {
+	padding: 0.3em 0.8em;
+}
+
+.profile-index {
+	h3, h4, p, dt, dd {
+		color: darken($primary-text-color, 10%);
+	}
+}
+
+.user-profile-picture {
+	border-radius: 5px;
+	margin-top: 10px;
+}
+
+@media (min-width: 500px) {
+  .user-profile-picture {
+    max-width: 40%;
+  }
+}
+
+.farm-profile-picture {
+	height: auto;
+	border-radius: 5px 5px 0 0;
+}
+
+.aside dl {
+	display: inline-block;
+}

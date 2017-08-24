@@ -1,0 +1,45 @@
+///// GRID SYSTEM
+
+// ***********************
+// Profile Grid
+// ***********************
+
+@media (min-width: 500px) {
+	.grid-dashboard__profile {
+  	display: grid;
+  	grid-template-columns: 3fr 1fr 1fr;
+  	grid-template-rows: auto;
+  	grid-template-areas:
+  		"main_title sidebar_title main_cta"
+  		"main sidebar sidebar"
+  		"main aside aside";
+  	grid-gap: 15px;
+  	padding: 1em;
+  }
+}
+
+////// GRID SECTIONS
+
+.section-main-title {
+	grid-area: main_title;
+}
+
+.section-main {
+	grid-area: main;
+}
+
+.section-sidebar-title {
+	grid-area: sidebar_title;
+}
+
+.section-sidebar {
+	grid-area: sidebar;
+}
+
+.section-main-cta {
+	grid-area: main_cta;
+}
+
+.aside {
+	grid-area: aside;
+}

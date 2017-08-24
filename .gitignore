@@ -10,3 +10,4 @@ public/assets
 /config/application.yml
 
 node_modules
+.byebug_history
