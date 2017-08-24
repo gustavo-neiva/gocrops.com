@@ -32,7 +32,7 @@ class User < ApplicationRecord
    end
 
   def user_avatar
-    self.facebook_picture_url || self.avatar_url || "http://via.placeholder.com/50x50"
+    self.avatar.try(:path) || self.facebook_picture_url || "http://via.placeholder.com/50x50"
   end
 
 end
