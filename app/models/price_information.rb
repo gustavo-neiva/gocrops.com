@@ -5,8 +5,4 @@ class PriceInformation < ApplicationRecord
   validates :market_price, presence: true, numericality: {greater_than: 0}
   validates :period, presence: true, uniqueness: { scope: :product_id}
 
-  def total_average_price(product_id)
-  end
-
-
 end
