@@ -11,4 +11,9 @@ class Product < ApplicationRecord
     return "images/icons/#{product.name}.svg"
   end
 
+  def historic_data_array(start_period, end_period)
+    price_informations.where("period >= ? and period <= ?",
+                              start_period, end_period).pluck(:market_price)
+  end
+
 end
