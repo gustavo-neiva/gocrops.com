@@ -1,9 +1,11 @@
-class CropsController < ApplicationController
+class Dashboard::CropsController < ApplicationController
+    layout "dashboard"
 
-    before_action :set_user, only: [:edit, :update, :show, :destroy]
+    before_action :set_crop, only: [:edit, :update, :show, :destroy]
 
     def index
       @crops = current_user.crops
+      @crops_class = "navbar-dashboard-link__active"
     end
 
     def new
@@ -12,6 +14,7 @@ class CropsController < ApplicationController
 
     def create
       @crop = current_user.crops.build(crop_params)
+      pry
       if @crop.save
         redirect_to dashboard_path
       else
@@ -48,5 +51,3 @@ class CropsController < ApplicationController
       params.require(:crop).permit(:harvest_date, :production, :transport, :product_id, :pictures)
     end
   end
-
-end
