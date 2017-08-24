@@ -13,5 +13,6 @@ class DashboardController < ApplicationController
 
   def profile
     @profile_class = "navbar-dashboard-link__active"
+    @user = current_user
   end
 end

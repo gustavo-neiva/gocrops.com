@@ -1,2 +1,36 @@
-<h1>Dashboard#profile</h1>
-<p>Find me in app/views/dashboard/profile.html.erb</p>
+<div class="grid-dashboard__profile profile-index">
+	<h2 class="section-main-title">My Info</h2>
+  <%= link_to "Edit Profile", edit_dashboard_profiles_path, class: "section-main-cta btn-section-cta btn__edit" %>
+	<div class="section-main box-component box-section box-section__padding">
+    <%= cl_image_tag @user.user_avatar, class: "responsive-image user-profile-picture" %>
+    <h3 class="sub-section-main-header"><%= @user.first_name + " " + @user.last_name %></h3>
+		<h4 class="sub-section-title">Bio</h4>
+		<p><%= @user.bio %></p>
+		<h4 class="sub-section-title">Contact</h4>
+		<ul>
+			<li><%= @user.email %></li>
+			<li><%= @user.phone %></li>
+		</ul>
+	</div>
+	<h2 class="section-sidebar-title">Farm</h2>
+	<div class="section-sidebar box-component box-section">
+		<img src="https://unsplash.it/600/400?image=915" alt="Farm name" class="responsive-image farm-profile-picture">
+    <!-- <%= cl_image_tag @user.farm_picture, class: "responsive-image user-profile-picture" %> -->
+		<div class="sub-section-farm-info box-section__padding">
+			<h3 class="sub-section-header"><%= @user.farm_name %></h3>
+			<h4 class="sub-section-title">Address</h4>
+			<p><%= @user.farm_location %></p>
+		</div>
+	</div>
+	<div class="aside box-component box-section box-section__padding">
+		<h4 class="sub-section-title__tag">Certificate</h4>
+		<dl>
+			<dt class="sub-section-title">Issue date</dt>
+			<dd>21/10/2014</dd>
+		</dl>
+		<dl>
+			<dt>Expiration date</dt>
+			<dd>21/10/2014</dd>
+		</dl>
+	</div>
+</div>
