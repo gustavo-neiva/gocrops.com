@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   get 'dashboard', to: 'dashboard#index'
-  get 'dashboard/crops'
   get 'dashboard/profile'
+  get 'dashboard/crops'
 
   ActiveAdmin.routes(self)
 
@@ -17,5 +17,9 @@ Rails.application.routes.draw do
       put '/farms', to: 'users#update_farm'
   end
 
+#Crops CRUD methods will be accessed via the Dashboard route
+  namespace :dashboard do
+    resources :crops, except: :index
+  end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

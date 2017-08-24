@@ -1,2 +1,21 @@
-<h1>Dashboard#crops</h1>
-<p>Find me in app/views/dashboard/crops.html.erb</p>
+<%= link_to 'Add new crop', new_dashboard_crop_path %>
+<table>
+  <thead>
+    <th>Product</th>
+    <th>Harvest Date</th>
+    <th>Quantity</th>
+    <th>Can Transport?</th>
+    <th>Description</th>
+  </thead>
+  <% @crops.each do |c|  %>
+  <tr>
+      <td><%= c.product.name %></td>
+      <td><%= l c.harvest_date, format: :long %></td>
+      <td><%= c.production %></td>
+      <td><%= c.transport ? 'Yes' : 'No'  %></td>
+      <td><%= c.description %></td>
+      <td><%= link_to "Edit", edit_dashboard_crop_path(c) %></td>
+      <td><%= link_to "Delete", dashboard_crop_path(c), method: :delete %></td>
+  </tr>
+  <% end %>
+</table>
