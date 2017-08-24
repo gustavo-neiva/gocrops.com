@@ -1,0 +1,14 @@
+<div class="navbar-dashboard">
+  <!-- Avatar -->
+  <div class="navbar-dashboad-item">
+      <%= cl_image_tag current_user.user_avatar, class: "avatar" %>
+  </div>
+
+  <!-- Right Navigation -->
+  <div class="navbar-dashboard-right">
+    <%= link_to "Dashboard", dashboard_path, class: "navbar-dashboard-item navbar-dashboard-link #{@dashboard_class}" %>
+    <%= link_to "Crops",  dashboard_crops_path, class: "navbar-dashboard-item navbar-dashboard-link #{@crops_class}" %>
+    <%= link_to "Profile", dashboard_profile_path, class: "navbar-dashboard-item navbar-dashboard-link #{@profile_class}" %>
+    <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "navbar-dashboard-item navbar-dashboard-link navbar-dashboard-link__logout" %>
+  </div>
+</div>

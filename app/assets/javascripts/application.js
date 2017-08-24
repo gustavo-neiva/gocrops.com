@@ -1,5 +1,7 @@
 //= require jquery
 //= require jquery_ujs
-//= require bootstrap-sprockets
+//= require bootstrap
+//= require cable
 
-//=require ./cable
+// We can't use require with ActiveAdmin
+// require_tree .
