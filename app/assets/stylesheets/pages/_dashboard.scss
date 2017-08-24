@@ -1,0 +1,59 @@
+////// BUTTONS
+
+@mixin btn-color-mixin($btn-color) {
+	background-color: $btn-color;
+	&:hover {
+    color: $background-super-light;
+		background: darken($btn-color, 20%);
+    text-decoration: none;
+	}
+}
+
+.btn-section-cta {
+	text-decoration: none;
+	text-transform: uppercase;
+	color: $background-super-light;
+	background: $secondary-text-color;
+	border-radius: 3px;
+	padding: 0.4em 0.8em;
+	box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
+}
+
+.btn__create { @include btn-color-mixin($primary-color) }
+
+.btn__edit { @include btn-color-mixin($support-current-color) }
+
+.btn__update { @include btn-color-mixin($primary-text-color)}
+
+.btn__delete { @include btn-color-mixin($support-down-color) }
+
+////// COMPONENTS
+
+.box-component {
+	background: $background-super-light;
+	border-radius: 5px;
+	box-shadow: 0 1px 5px 0 rgba(0,0,0,0.2),0 1px 0 0 rgba(0,0,0,0.03);
+}
+
+// GENERAL SECTION STYLES
+
+.section-title {
+	color: $primary-color;
+}
+
+.section-cta {
+	position: absolute;
+	right: 10px;
+	top: 20px;
+}
+
+.responsive-image {
+	width: 100%;
+}
+
+.sub-section-title__tag {
+	text-transform: uppercase;
+	letter-spacing: 3px;
+	color: $secondary-text-color !important;
+	font-size: 0.9em;
+}
