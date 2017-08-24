@@ -1,4 +1,5 @@
 require "csv"
+require "open-uri"
 
 desc "Parsing historic price information"
 task :parse_csv do
@@ -10,22 +11,18 @@ end
 
 def parse_and_save
 
-  # PriceInformation.destroy_all
 
   csv_options = { headers: :first_row }
-  filepath = File.dirname(__FILE__) + "/market-prices.csv"
+  url = "https://ec.europa.eu/agriculture/sites/agriculture/files/markets-and-prices/price-monitoring/market-prices-all-products_en.csv"
+  download = open(url)
+  IO.copy_stream(download, 'test.csv')
 
-  #Select only EU as country
-  #ll = CSV.select { |row| row['Country'] == 'EU'}
-
-  CSV.foreach(filepath, encoding: "bom|utf-8", headers: :first_row) do |row|
+  CSV.foreach(download, encoding: "bom|utf-8", headers: :first_row) do |row|
+    #Select only EU as country
     next unless row['Country'] == 'EU'
-    puts "================="
-    puts row
 
     # Find products where the name matches with the CSV
     product = Product.find_by(name: row['Product desc'])
-    puts row['Product desc']
 
     if product.present?
 
