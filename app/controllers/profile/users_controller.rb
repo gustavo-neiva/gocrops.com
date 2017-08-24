@@ -7,8 +7,12 @@ class Profile::UsersController < ApplicationController
   end
 
   def update
-    @user.update(user_params)
-    redirect_to dashboard_path
+    if @user.update(user_params)
+    redirect_to edit_profile_users_path
+    else
+      render :edit
+    end
+
   end
 
   def show
