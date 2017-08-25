@@ -111,6 +111,7 @@ GEM
     formtastic (3.1.5)
       actionpack (>= 3.2.13)
     formtastic_i18n (0.6.0)
+    geocoder (1.4.4)
     globalid (0.4.0)
       activesupport (>= 4.2.0)
     has_scope (0.7.1)
@@ -311,6 +312,7 @@ DEPENDENCIES
   devise
   figaro
   font-awesome-sass
+  geocoder
   inherited_resources!
   jbuilder (~> 2.0)
   jquery-rails
@@ -335,4 +337,4 @@ RUBY VERSION
    ruby 2.3.4p301
 
 BUNDLED WITH
-   1.15.1
+   1.15.4

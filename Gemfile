@@ -14,7 +14,7 @@ gem 'cloudinary'
 gem 'carrierwave', '~> 0.11.2'
 gem 'activeadmin', github: 'activeadmin/activeadmin'
 gem 'inherited_resources', github: 'activeadmin/inherited_resources'
-
+gem "geocoder"
 
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass'
