@@ -4,6 +4,10 @@
 
 <% current_user.crops.each do |crop| %>
   <% product = Product.find(crop.product_id) %>
+
+  <%= product.current_month %>
+  <%= image_tag "icons/#{product.name.downcase}.svg" %>
+    <%= product.add_icon_to_product %> alt="icon <%= product.name.downcase %>">
   <%= line_chart product.historic_data_array('20150101', '20170801') %>
 <% end %>
 

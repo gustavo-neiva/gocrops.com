@@ -6,14 +6,20 @@ class Product < ApplicationRecord
   validates :name, presence: true, uniqueness: true
   validates :category, presence: true, uniqueness: { scope: :name}
 
-  def add_icon_to_product(product_id)
-    product = Product.find(product_id)
-    return "images/icons/#{product.name}.svg"
+  def add_icon_to_product#(product_id)
+    #product = Product.find(product_id)
+    #return "../../assets/images/icons/#{self.name}.svg"
   end
 
   def historic_data_array(start_period, end_period)
     price_informations.where("period >= ?::date and period <= ?::date",
                               start_period, end_period).pluck(:period, :market_price)
+  end
+
+  def current_month
+   price_informations.where("period >= ?::date and name = ?",
+                              Date.today, self.name).order("period ASC").limit(1)
+
   end
 
 end
