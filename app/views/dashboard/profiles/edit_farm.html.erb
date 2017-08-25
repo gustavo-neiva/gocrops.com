@@ -1,0 +1,7 @@
+<%= simple_form_for(@farm) do |f| %>
+  <%= f.input :farm_name %>
+  <%= f.input :farm_location %>
+  <%= f.input :farm_size %>
+  <%= f.input :pictures, as: :attachinary %>
+  <%= f.submit %>
+<% end %>
