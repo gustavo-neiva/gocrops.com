@@ -10,10 +10,11 @@ Rails.application.routes.draw do
   controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
 
   namespace :dashboard do
+    resource :farms, only: [:edit, :update]
     resource :profiles, only: [:edit, :update]
       # Farm is related to user
-      get '/farms/edit', to: 'profiles#edit_farm'
-      put '/farms', to: 'profiles#update_farm'
+      #get '/farms/edit', to: 'profiles#edit_farm'
+      #put '/farms', to: 'profiles#update_farm'
   end
 
 #Crops CRUD methods will be accessed via the Dashboard route
