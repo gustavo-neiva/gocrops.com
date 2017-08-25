@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
   before_action :active_navbar, if: :devise_controller?
 
   def after_sign_in_path_for(resource)
-    request.env['omniauth.origin'] || stored_location_for(resource) || dashboard_path
+    request.env['omniauth.origin'] || stored_location_for(resource) || edit_dashboard_profiles_path
   end
 
   private
@@ -16,6 +16,8 @@ class ApplicationController < ActionController::Base
     options = { units: "metric", APPID: ENV['OpenWeather'] }
     if session[:weather].nil? && current_user && current_user.farm_location
       session[:weather] = OpenWeather::Current.city(current_user.farm_location, options)
+    else
+      session[:weather] = OpenWeather::Current.city("Cuiaba, BR", options)
     end
   end
 
