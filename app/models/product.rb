@@ -12,8 +12,8 @@ class Product < ApplicationRecord
   end
 
   def historic_data_array(start_period, end_period)
-    price_informations.where("period >= ? and period <= ?",
-                              start_period, end_period).pluck(:market_price)
+    price_informations.where("period >= ?::date and period <= ?::date",
+                              start_period, end_period).pluck(:period, :market_price)
   end
 
 end
