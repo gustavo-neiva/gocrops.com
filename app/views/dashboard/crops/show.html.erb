@@ -1,0 +1,18 @@
+<table>
+  <thead>
+    <th>Product</th>
+    <th>Harvest Date</th>
+    <th>Quantity</th>
+    <th>Can Transport?</th>
+    <th>Description</th>
+  </thead>
+  <tr>
+      <td><%= @crop.product.name %></td>
+      <td><%= l @crop.harvest_date, format: :long %></td>
+      <td><%= @crop.production %></td>
+      <td><%= @crop.transport ? 'Yes' : 'No'  %></td>
+      <td><%= @crop.description %></td>
+      <td><%= link_to "Return", dashboard_crops_path(@crop)%></td>
+
+  </tr>
+</table>

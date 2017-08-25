@@ -1,8 +1,12 @@
 <%= simple_form_for @crop, url: dashboard_crops_path do |f| %>
+<!--Special div so we can remove the DOM node with jquery and hide this input when needed  -->
+  <div id="unique">
   <%= f.input :product_id, as: :select, collection: @products  %>
+  </div>
   <%= f.input :harvest_date %>
   <%= f.input :transport, as: :boolean %>
   <%= f.input :production %>
   <%= f.input :description, as: :text %>
   <%= f.submit %>
 <% end %>
+<%= link_to "Return", dashboard_crops_path(@crop)%>
