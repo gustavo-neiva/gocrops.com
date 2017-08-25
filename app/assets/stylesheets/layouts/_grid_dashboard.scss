@@ -1,6 +1,21 @@
 ///// GRID SYSTEM
 
 // ***********************
+// Crops Grid
+// ***********************
+
+.grid-dashboard__crops {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: auto;
+	grid-template-areas:
+		"main_title main_cta"
+		"main main";
+	grid-gap: 15px;
+	padding: 1em 2em;
+}
+
+// ***********************
 // Profile Grid
 // ***********************
 
@@ -14,7 +29,7 @@
   		"main sidebar sidebar"
   		"main aside aside";
   	grid-gap: 15px;
-  	padding: 1em;
+  	padding: 1em 2em;
   }
 }
 
