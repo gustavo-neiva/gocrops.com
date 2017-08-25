@@ -4,6 +4,11 @@ class Dashboard::ProfilesController < ApplicationController
   before_action :set_user, only: [:edit, :update, :show]
   before_action :active_navbar, only: [:edit, :edit_farm]
 
+  def show
+    @flat = Flat.find(params[:id])
+    @alert_message = "You are viewing #{@flat.name}"
+  end
+
   def edit
     @user = current_user
   end
