@@ -1,5 +1,4 @@
-<%= simple_form_for @crop, url: dashboard_crops_path do |f| %>
-  <%= f.input :product_id, as: :select, collection: @products  %>
+<%= simple_form_for @crop, url: dashboard_crop_path do |f| %>
   <%= f.input :harvest_date %>
   <%= f.input :transport, as: :boolean %>
   <%= f.input :production %>
