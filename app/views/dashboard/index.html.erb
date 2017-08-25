@@ -46,7 +46,7 @@
 
 <table>
   <td><%= "Weather in #{current_user.farm_location}  #{main_weather} #{Time.now.strftime("%X")}" %></td>
-  <td><img src="http://openweathermap.org/img/w/<%="#{session[:weather]["weather"].first["icon"]}.png"%>" alt=""></td>
+  <td><img src="http://openweathermap.org/img/w/<%="#{weather_session["weather"].first["icon"]}.png"%>" alt=""></td>
   <td><%=  weather_description %></td>
   <td><%= "Temperature #{temperature.round(2).to_s} °C" %></td>
   <td><%= "Minimun temperature  #{temp_max.round(2).to_s} °C"  %></td>
