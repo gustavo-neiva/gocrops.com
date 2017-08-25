@@ -1,30 +1,43 @@
 <div class="grid-dashboard__index">
-  <h2 class="section-main-title">My Crops Trends</h2>
-	<div class="section-main trends">
-		<div class="trend_card">
-			<div class="crop_icon">Crop Icon</div>
-			<p class="crop_name">Radish</p>
-			<p>Current Month</p>
-			<span>$55 / 1kg</span>
-			<p>Next Month</p>
-			<span>$55 / 1kg</span>
+  <h2 class="section-main-title section-title">My Crops Trends</h2>
+	<div class="section-main">
+		<div class="trend_card box-component grid-trends">
+			<div class="trend-product trend-text__heavy">
+        <span>
+          <i class="fa fa-cutlery" aria-hidden="true"></i>
+        </span>
+        <p>Food name</p>
+      </div>
+			<p class="current-price-title price-trend-title">Current Month</p>
+			<span class="current-price-content trend-text__heavy">$55 / 1kg</span>
+			<p class="next-price-title price-trend-title">Next Month</p>
+			<span class="next-price-content trend-text__heavy">$55 / 1kg</span>
+      <div class="trend-arrow trend-text__heavy">
+        <i class="fa fa-arrow-up" aria-hidden="true"></i>
+      </div>
+      <div class="graph">graph graph</div>
 		</div>
 	</div>
-  <h2 class="section-sidebar-title">Utilities</h2>
-	<div class="section-sidebar utilities">
-    <div class="utility_card box-component">
-			<div class="utility_icon">Clouds</div>
-			<span><%= clouds %></span>
+  <h2 class="section-sidebar-title section-title">Utilities</h2>
+	<div class="section-sidebar grid-utilities">
+    <div class="utility_card box-component box-section__padding">
+			<div class="utility_icon">Sky</div>
+      <img src="http://openweathermap.org/img/w/<%="#{session[:weather]["weather"].first["icon"]}.png"%>" alt="">
+			<span><%= weather_description %></span>
 		</div>
-    <div class="utility_card box-component">
+    <div class="utility_card box-component box-section__padding">
 			<div class="utility_icon">Wind Seed</div>
 			<span><%= "#{wind_speed.round(2).to_s} m/s" %></span>
 		</div>
-    <div class="utility_card box-component">
+    <div class="utility_card box-component box-section__padding">
 			<div class="utility_icon">Temperature</div>
 			<span><%= "#{temp_max.round(2).to_s} °C" %></span>
 		</div>
-    <div class="utility_card box-component">
+    <div class="utility_card box-component box-section__padding">
+			<div class="utility_icon">Air humidity</div>
+			<span><%= "#{humidity.round(2).to_s}%" %></span>
+		</div>
+    <div class="utility_card box-component box-section__padding">
 			<div class="utility_icon">Sun Hours</div>
       <% sunrise_time %>
       <% sunset_time %>
@@ -32,20 +45,3 @@
 		</div>
 	</div>
 </div>
-
-<%= controller.action_name %>
-
-<table>
-  <td><%= "Weather in #{current_user.farm_location}  #{main_weather} #{Time.now.strftime("%X")}" %></td>
-  <td><img src="http://openweathermap.org/img/w/<%="#{session[:weather]["weather"].first["icon"]}.png"%>" alt=""></td>
-  <td><%=  weather_description %></td>
-  <td><%= "Temperature #{temperature.round(2).to_s} °C" %></td>
-  <td><%= "Minimun temperature  #{temp_max.round(2).to_s} °C"  %></td>
-  <td><%= "Maximun temperature #{temp_min.round(2).to_s} °C "%></td>
-  <td><%= "Air humidity  #{humidity.round(2).to_s}%" %></td>
-  <td><%= "Wind speed #{wind_speed.round(2).to_s} m/s "%></td>
-  <td><%= clouds %></td>
-  <td><%# sunrise_time.strftime("%X")  %></td>
-  <td><%# sunset_time.strftime("%X") %></td>
-  <td><%= hours_sun %></td>
-</table>
