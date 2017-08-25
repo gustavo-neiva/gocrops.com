@@ -3,7 +3,7 @@
   <%= link_to "Edit Profile", edit_dashboard_profiles_path, class: "section-main-cta btn-section-cta btn__edit" %>
 	<div class="section-main box-component box-section box-section__padding">
     <%= cl_image_tag @user.user_avatar, class: "responsive-image user-profile-picture" %>
-    <h3 class="sub-section-main-header"><%= "#{ @user.first_name } #{@user.last_name}" %></h3>
+    <h3 class="sub-section-main-header"><%= "#{@user.first_name} #{@user.last_name}" %></h3>
 		<h4 class="sub-section-title">Bio</h4>
 		<p><%= @user.bio %></p>
 		<h4 class="sub-section-title">Contact</h4>

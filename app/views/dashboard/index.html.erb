@@ -1,7 +1,3 @@
-<h1>Dashboard#index</h1>
-<p>Graph goes here!</p>
-
-
 <% current_user.crops.each do |crop| %>
   <% product = Product.find(crop.product_id) %>
 
@@ -11,3 +7,54 @@
   <%= line_chart product.historic_data_array('20150101', '20170801') %>
 <% end %>
 
+<div class="grid-dashboard__index">
+  <h2 class="section-main-title">My Crops Trends</h2>
+	<div class="section-main trends">
+		<div class="trend_card">
+			<div class="crop_icon">Crop Icon</div>
+			<p class="crop_name">Radish</p>
+			<p>Current Month</p>
+			<span>$55 / 1kg</span>
+			<p>Next Month</p>
+			<span>$55 / 1kg</span>
+		</div>
+	</div>
+  <h2 class="section-sidebar-title">Utilities</h2>
+	<div class="section-sidebar utilities">
+    <div class="utility_card box-component">
+			<div class="utility_icon">Clouds</div>
+			<span><%= clouds %></span>
+		</div>
+    <div class="utility_card box-component">
+			<div class="utility_icon">Wind Seed</div>
+			<span><%= "#{wind_speed.round(2).to_s} m/s" %></span>
+		</div>
+    <div class="utility_card box-component">
+			<div class="utility_icon">Temperature</div>
+			<span><%= "#{temp_max.round(2).to_s} °C" %></span>
+		</div>
+    <div class="utility_card box-component">
+			<div class="utility_icon">Sun Hours</div>
+      <% sunrise_time %>
+      <% sunset_time %>
+			<span><%= hours_sun %></span>
+		</div>
+	</div>
+</div>
+
+<%= controller.action_name %>
+
+<table>
+  <td><%= "Weather in #{current_user.farm_location}  #{main_weather} #{Time.now.strftime("%X")}" %></td>
+  <td><img src="http://openweathermap.org/img/w/<%="#{session[:weather]["weather"].first["icon"]}.png"%>" alt=""></td>
+  <td><%=  weather_description %></td>
+  <td><%= "Temperature #{temperature.round(2).to_s} °C" %></td>
+  <td><%= "Minimun temperature  #{temp_max.round(2).to_s} °C"  %></td>
+  <td><%= "Maximun temperature #{temp_min.round(2).to_s} °C "%></td>
+  <td><%= "Air humidity  #{humidity.round(2).to_s}%" %></td>
+  <td><%= "Wind speed #{wind_speed.round(2).to_s} m/s "%></td>
+  <td><%= clouds %></td>
+  <td><%# sunrise_time.strftime("%X")  %></td>
+  <td><%# sunset_time.strftime("%X") %></td>
+  <td><%= hours_sun %></td>
+</table>
