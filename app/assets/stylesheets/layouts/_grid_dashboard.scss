@@ -1,6 +1,21 @@
 ///// GRID SYSTEM
 
 // ***********************
+// Dashboard/Index Grid
+// ***********************
+
+.grid-dashboard__index {
+	display: grid;
+	grid-template-columns: 3fr 1fr 1fr;
+	grid-template-rows: auto;
+	grid-template-areas:
+		"main_title main_title sidebar_title"
+		"main sidebar sidebar"
+		"main sidebar sidebar";
+	grid-gap: 15px;
+}
+
+// ***********************
 // Crops Grid
 // ***********************
 
