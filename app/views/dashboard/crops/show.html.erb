@@ -12,6 +12,7 @@
       <td><%= @crop.production %></td>
       <td><%= @crop.transport ? 'Yes' : 'No'  %></td>
       <td><%= @crop.description %></td>
+      <td><%= link_to "Edit", edit_dashboard_crop_path(@crop) %></td>
       <td><%= link_to "Return", dashboard_crops_path%></td>
 
   </tr>
