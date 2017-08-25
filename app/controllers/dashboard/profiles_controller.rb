@@ -10,7 +10,7 @@ class Dashboard::ProfilesController < ApplicationController
 
   def update
     if @user.update(user_info_params)
-      redirect_to dashboard_profile_path
+      redirect_to edit_dashboard_farms_path
     else
       render :edit
     end
