@@ -4,6 +4,8 @@ class DashboardController < ApplicationController
   def index
     # Variable to set navbar active button
     @dashboard_class = "navbar-dashboard-link__active"
+    @products = Product.all
+
   end
 
   def crops
