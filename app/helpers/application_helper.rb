@@ -1,4 +1,10 @@
 module ApplicationHelper
+  def main_weather
+    @main_weather = session[:weather]["weather"].first["main"]
+  end
+  def weather_description
+    @description = session[:weather]["weather"].first["description"]
+  end
   def temperature
     @temperature = session[:weather]["main"]["temp"]
   end
@@ -14,9 +20,6 @@ module ApplicationHelper
   def wind_speed
     @wind_speed = session[:weather]["wind"]["speed"]
   end
-  def main_weather
-    @main_weather = session[:weather]["weather"].first["main"]
-  end
   def clouds
     @clouds =  session[:weather]["clouds"]["all"]
   end
@@ -26,10 +29,7 @@ module ApplicationHelper
   def sunset_time
     @sunset = Time.at(session[:weather]["sys"]["sunset"])
   end
-  def weather_description
-    @description = session[:weather]["weather"].first["description"]
-  end
-  def day_duration
-    @hours_sun = ((@sunset - @sunrise)/36000).round(2)
+  def hours_sun
+    @hours_sun = ((@sunset - @sunrise)/3600).round(2)
   end
 end
