@@ -1,15 +1,35 @@
 module ApplicationHelper
-  def weather_data
-    @temperature = session[:weather]["main"]["temp"]
-    @temp_max = session[:weather]["main"]["temp_max"]
-    @temp_min = session[:weather]["main"]["temp_min"]
-    @humidity = session[:weather]["main"]["humidity"]
-    @wind_speed = session[:weather]["wind"]["speed"]
+  def main_weather
     @main_weather = session[:weather]["weather"].first["main"]
-    @clouds =  session[:weather]["clouds"]["all"]
-    @sunrise = Time.at(session[:weather]["sys"]["sunrise"])
-    @sunset = Time.at(session[:weather]["sys"]["sunset"])
+  end
+  def weather_description
     @description = session[:weather]["weather"].first["description"]
-    @hours_sun = ((@sunset - @sunrise)/36000).round(2)
+  end
+  def temperature
+    @temperature = session[:weather]["main"]["temp"]
+  end
+  def temp_max
+    @temp_max = session[:weather]["main"]["temp_max"]
+  end
+  def temp_min
+    @temp_min = session[:weather]["main"]["temp_min"]
+  end
+  def humidity
+    @humidity = session[:weather]["main"]["humidity"]
+  end
+  def wind_speed
+    @wind_speed = session[:weather]["wind"]["speed"]
+  end
+  def clouds
+    @clouds =  session[:weather]["clouds"]["all"]
+  end
+  def sunrise_time
+    @sunrise = Time.at(session[:weather]["sys"]["sunrise"])
+  end
+  def sunset_time
+    @sunset = Time.at(session[:weather]["sys"]["sunset"])
+  end
+  def hours_sun
+    @hours_sun = ((@sunset - @sunrise)/3600).round(2)
   end
 end
