@@ -1,6 +1,6 @@
 <h2>Edit Farm</h2>
 
-<%= simple_form_for @user, url: dashboard_farms_edit_path do |f| %>
+<%= simple_form_for @user, url: dashboard_farms_path, method: :update do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
