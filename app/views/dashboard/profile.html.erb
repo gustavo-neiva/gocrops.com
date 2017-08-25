@@ -34,3 +34,12 @@
 		</dl>
 	</div>
 </div>
+<div class="map" style="height: 100%"></div>
+	<% content_for(:after_js) do %>
+		<%= javascript_tag do %>
+		  $(document).ready(function() {
+		    var coord = <%= raw @user_coordinates.to_json %>;
+		    alert('Flat coordinates are ' + coord.lat + ', ' + coord.lng);
+		  });
+		<% end %>
+	<% end %>
