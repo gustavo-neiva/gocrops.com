@@ -34,12 +34,26 @@
 		</dl>
 	</div>
 </div>
-<div class="map" style="height: 100%"></div>
-	<% content_for(:after_js) do %>
-		<%= javascript_tag do %>
-		  $(document).ready(function() {
-		    var coord = <%= raw @user_coordinates.to_json %>;
-		    alert('Flat coordinates are ' + coord.lat + ', ' + coord.lng);
-		  });
-		<% end %>
-	<% end %>
+
+<%= @user.latitude %>
+<br>
+<%= @user.longitude %>
+
+<div id="map" style="width: 100%; height: 600px;"></div>
+
+<% content_for(:after_js) do %>
+  <script>
+    $(document).ready(function() {
+      var location = <%= raw @instrument_coordinates.to_json %>;
+      var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 14,
+        center: location
+      });
+      var marker = new google.maps.Marker({
+        position: location,
+        map: map
+      });
+    });
+  </script>
+<% end %>
+
