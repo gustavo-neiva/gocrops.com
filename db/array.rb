@@ -1,103 +1,112 @@
 def city_array_ibge
-  %W{"Pacaraima (RR)"
-"Uruará (PA)"
-"Mirassol (SP)"
-"Coxim (MS)"
-"Faina (GO)"
-"Guanambi (BA)"
-"Alvorada (RS)"
-"Bom Sucesso (PR)"
-"São Vicente do Seridó (PB)"
-"Itapipoca (CE)"
-"Barro Alto (BA)"
-"Faxinal do Soturno (RS)"
-"General Sampaio (CE)"
-"Itapema (SC)"
-"Redentora (RS)"
-"Capinzal do Norte (MA)"
-"Lajedão (BA)"
-"Novorizonte (MG)"
-"Vazante (MG)"
-"Martinópolis (SP)"
-"Seropédica (RJ)"
-"Alvorada (TO)"
-"Matos Costa (SC)"
-"Croatá (CE)"
-"Rio Espera (MG)"
-"Américo Brasiliense (SP)"
-"Piraquara (PR)"
-"Igaratinga (MG)"
-"Mirandópolis (SP)"
-"Concórdia (SC)"
-"Maravilhas (MG)"
-"São Sebastião do Passé (BA)"
-"Adustina (BA)"
-"Cunhataí (SC)"
-"São Benedito do Rio Preto (MA)"
-"Malhada de Pedras (BA)"
-"Brotas (SP)"
-"Santa Cruz Cabrália (BA)"
-"Delta (MG)"
-"Currais Novos (RN)"
-"Catalão (GO)"
-"Itaperuçu (PR)"
-"Anchieta (ES)"
-"Jardinópolis (SC)"
-"São João da Ponte (MG)"
-"Fernando Prestes (SP)"
-"Engenheiro Paulo de Frontin (RJ)"
-"Mirassolândia (SP)"
-"Lagoão (RS)"
-"Capela (SE)"
-"Ocara (CE)"
-"São Domingos (SE)"
-"Santa Maria da Boa Vista (PE)"
-"Benedito Leite (MA)"
-"Orizânia (MG)"
-"Nilo Peçanha (BA)"
-"Santo Antônio do Tauá (PA)"
-"Carmo do Rio Verde (GO)"
-"São Mamede (PB)"
-"Conceição do Araguaia (PA)"
-"Maetinga (BA)"
-"Santa Isabel do Ivaí (PR)"
-"Aripuanã (MT)"
-"Cantagalo (RJ)"
-"Diamante do Norte (PR)"
-"São José do Divino (PI)"
-"Calçoene (AP)"
-"Pontalina (GO)"
-"Paranaguá (PR)"
-"Maragogi (AL)"
-"Itapé (BA)"
-"Itaberaí (GO)"
-"Volta Redonda (RJ)"
-"Itacurubi (RS)"
-"Balneário Arroio do Silva (SC)"
-"Palestina (AL)"
-"Taquarivaí (SP)"
-"Maximiliano de Almeida (RS)"
-"Anchieta (ES)"
-"Nova Bassano (RS)"
-"São João da Canabrava (PI)"
-"Ouvidor (GO)"
-"Arara (PB)"
-"Lagoa de Velhos (RN)"
-"Chapecó (SC)"
-"Serra Negra do Norte (RN)"
-"Ubaitaba (BA)"
-"Paraí (RS)"
-"Marco (CE)"
-"Saboeiro (CE)"
-"Nova Alvorada (RS)"
-"Encruzilhada do Sul (RS)"
-"Malhada dos Bois (SE)"
-"São Félix do Piauí (PI)"
-"Monte Alegre do Piauí (PI)"
-"Goiânia (GO)"
-"Lucena (PB)"
-"Igarassu (PE)"
-"São Domingos do Cariri (PB)"
-"Guarani d'Oeste (SP)"}
+["Pacaraima  BR",
+"Uruará  BR" ,
+"Mirassol  BR" ,
+"Coxim  BR" ,
+"Faina  BR" ,
+"Guanambi  BR" ,
+"Alvorada  BR" ,
+"Bom Sucesso  BR" ,
+"São Vicente do Seridó  BR" ,
+"Itapipoca  BR" ,
+"Barro Alto  BR" ,
+"Faxinal do Soturno  BR" ,
+"General Sampaio  BR" ,
+"Itapema  BR" ,
+"Redentora  BR" ,
+"Capinzal do Norte  BR" ,
+"Lajedão  BR" ,
+"Novorizonte  BR" ,
+"Vazante  BR" ,
+"Martinópolis  BR" ,
+"Seropédica  BR" ,
+"Alvorada  BR" ,
+"Matos Costa  BR" ,
+"Croatá  BR" ,
+"Rio Espera  BR" ,
+"Américo Brasiliense  BR" ,
+"Piraquara  BR" ,
+"Igaratinga  BR" ,
+"Mirandópolis  BR" ,
+"Concórdia  BR" ,
+"Maravilhas  BR" ,
+"São Sebastião do Passé  BR" ,
+"Adustina  BR" ,
+"Cunhataí  BR" ,
+"São Benedito do Rio Preto  BR" ,
+"Malhada de Pedras  BR" ,
+"Brotas  BR" ,
+"Santa Cruz Cabrália  BR" ,
+"Delta  BR" ,
+"Currais Novos  BR" ,
+"Catalão  BR" ,
+"Itaperuçu  BR" ,
+"Anchieta  BR" ,
+"Jardinópolis  BR" ,
+"São João da Ponte  BR" ,
+"Fernando Prestes  BR" ,
+"Engenheiro Paulo de Frontin  BR" ,
+"Mirassolândia  BR" ,
+"Lagoão  BR" ,
+"Itapé  BR" ,
+"Itaberaí  BR" ,
+"Volta Redonda  BR" ,
+"Itacurubi  BR" ,
+"Balneário Arroio do Silva  BR" ,
+"Palestina  BR" ,
+"Taquarivaí  BR" ,
+"Maximiliano de Almeida  BR" ,
+"Anchieta  BR" ,
+"Nova Bassano  BR" ,
+"São João da Canabrava  BR" ,
+"Ouvidor  BR" ,
+"Arara  BR" ,
+"Lagoa de Velhos  BR" ,
+"Chapecó  BR" ,
+"Serra Negra do Norte  BR" ,
+"Ubaitaba  BR" ,
+"Paraí  BR" ,
+"Marco  BR" ,
+"Saboeiro  BR" ,
+"Nova Alvorada  BR" ,
+"Encruzilhada do Sul  BR" ,
+"Malhada dos Bois  BR" ,
+"São Félix do Piauí  BR" ,
+"Monte Alegre do Piauí  BR" ,
+"Goiânia  BR" ,
+"Lucena  BR" ,
+"Igarassu  BR" ,
+"São Domingos do Cariri  BR" ,
+"Guarani d'Oeste  BR" ,
+"Garissa KE" ,
+"Kakamega KE" ,
+"Embu KE" ,
+"Bungoma KE" ,
+"Nyeri KE" ,
+"Meru KE" ,
+"Wajir KE" ,
+"Naivasha KE" ,
+"Voi KE" ,
+"Nanyuki KE" ,
+"Mavinga AO" ,
+"Caxito AO" ,
+"Luena AO" ,
+"Nzeto AO" ,
+"Camacupa AO" ,
+"Luanga AO" ,
+"Ambriz AO" ,
+"Menongue AO" ,
+"Camabatela AO" ,
+"Uacu Cungo AO" ,
+"Chimoio MZ" ,
+"Quelimane MZ" ,
+"Tete MZ" ,
+"Xai-Xai MZ" ,
+"Maxixe MZ" ,
+"Inhambane MZ" ,
+"Pemba MZ" ,
+"Lichinga MZ" ,
+"Dondo MZ" ,
+"Cuamba MZ"]
 
 end
