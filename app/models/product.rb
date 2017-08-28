@@ -39,7 +39,7 @@ class Product < ApplicationRecord
 
     # make forecast for next month
 
-    price = TeaLeaves.forecast(data, 1)
+    price = TeaLeaves.forecast(data, 10)
 
     price = price / 100
 
