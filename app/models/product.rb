@@ -1,4 +1,4 @@
-require 'tealeaves'
+require 'descriptive_statistics'
 
 class Product < ApplicationRecord
   belongs_to :category
@@ -17,11 +17,7 @@ class Product < ApplicationRecord
 
     # Find correct price information object
 
-    price_current_month = PriceInformation.where("period <= ?::date and product_id = ?",
-                                                   Date.today, self.id).order("period ASC").limit(1)      #first.market_price
-
-    # Call first object, get market price, convert to Fixnum and divide by 100 to receive price/kg
-    price_current_month.first.market_price.to_f / 100
+   self.price_informations.order("period ASC").last.market_price.to_f / 100.00
 
   end
 
@@ -30,7 +26,7 @@ class Product < ApplicationRecord
     data = []
 
     # find all priceinfo objects for the product
-    all_objects = PriceInformation.where(product_id: self.id)
+    all_objects = self.price_informations
 
     # store all marketprices in data array
     all_objects.each do |object|
@@ -39,7 +35,11 @@ class Product < ApplicationRecord
 
     # make forecast for next month
 
-    price = TeaLeaves.forecast(data, 10)
+    if data.size > 15
+      price = TeaLeaves.forecast(data, 10)
+    else
+      price = TeaLeaves.forecast(data, 6)
+    end
 
     price = price / 100
 
@@ -47,4 +47,29 @@ class Product < ApplicationRecord
 
   end
 
+  def forecast_next_month
+    self.forecast_time_series(period: 12)
+  end
+
+
+  #12
+  def forecast_time_series(options = {})
+
+    res = []
+    pointer = options[:pointer] || 0
+    period  = options[:period]  || 12
+    data    = self.price_informations.order("period DESC").map { |o| o.market_price.to_f }
+
+    res[period] = data.slice(pointer, period)
+    res = res.compact.flatten!
+
+    #unless res.size.zero?
+    #  res =forecast_time_series({pointer: pointer + period, period: period})
+    #end
+
+    return (res.mean / 100).round(2).to_f
+  end
+
 end
+
+
