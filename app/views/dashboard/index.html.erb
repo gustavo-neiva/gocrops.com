@@ -23,8 +23,8 @@
 	<div class="section-sidebar grid-utilities">
     <div class="utility_card box-component box-section__padding">
 			<div class="utility_icon">Sky</div>
-      <img src="http://openweathermap.org/img/w/<%="#{session[:weather]["weather"].first["icon"]}.png"%>" alt="">
-			<span><%= weather_description %></span>
+      <img src="http://openweathermap.org/img/w/<%="#{weather_object["weather"].first["icon"]}.png"%>" alt="">
+			<span><%=  main_weather %></span>
 		</div>
     <div class="utility_card box-component box-section__padding">
 			<div class="utility_icon">Wind Seed</div>
@@ -32,7 +32,7 @@
 		</div>
     <div class="utility_card box-component box-section__padding">
 			<div class="utility_icon">Temperature</div>
-			<span><%= "#{temp_max.round(2).to_s} °C" %></span>
+			<span><%= "#{temperature.round(2).to_s} °C" %></span>
 		</div>
     <div class="utility_card box-component box-section__padding">
 			<div class="utility_icon">Air humidity</div>
@@ -46,3 +46,5 @@
 		</div>
 	</div>
 </div>
+
+<%#= controller.action_name %>

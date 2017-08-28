@@ -1,6 +1,5 @@
 module ApplicationHelper
-
-  def session_weather
+  def weather_object
       if session[:weather].present?
         return session[:weather]
       else
@@ -22,34 +21,34 @@ module ApplicationHelper
 
 
   def main_weather
-    @main_weather = session_weather["weather"].first["main"]
+    @main_weather =  weather_object["weather"].first["main"]
   end
   def weather_description
-    @description = session_weather["weather"].first["description"]
+    @description =  weather_object["weather"].first["description"]
   end
   def temperature
-    @temperature = session_weather["main"]["temp"]
+    @temperature = weather_object["main"]["temp"]
   end
   def temp_max
-    @temp_max = session_weather["main"]["temp_max"]
+    @temp_max =  weather_object["main"]["temp_max"]
   end
   def temp_min
-    @temp_min = session_weather["main"]["temp_min"]
+    @temp_min =  weather_object["main"]["temp_min"]
   end
   def humidity
-    @humidity = session_weather["main"]["humidity"]
+    @humidity =  weather_object["main"]["humidity"]
   end
   def wind_speed
-    @wind_speed = session_weather["wind"]["speed"]
+    @wind_speed =  weather_object["wind"]["speed"]
   end
   def clouds
-    @clouds =  session_weather["clouds"]["all"]
+    @clouds =   weather_object["clouds"]["all"]
   end
   def sunrise_time
-    @sunrise = Time.at(session_weather["sys"]["sunrise"])
+    @sunrise = Time.at( weather_object["sys"]["sunrise"])
   end
   def sunset_time
-    @sunset = Time.at(session_weather["sys"]["sunset"])
+    @sunset = Time.at( weather_object["sys"]["sunset"])
   end
   def hours_sun
     @hours_sun = ((@sunset - @sunrise)/3600).round(2)
