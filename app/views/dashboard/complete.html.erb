@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <nav class="nav nav-tabs" id="myTab" role="tablist">
+        <a class="nav-item nav-link active" id="nav-my-info-tab" data-toggle="tab" href="#nav-my-info" role="tab" aria-controls="nav-my-info" aria-expanded="true">My info</a>
+        <a class="nav-item nav-link" id="nav-farm-tab" data-toggle="tab" href="#nav-farm" role="tab" aria-controls="nav-farm">Farm Details</a>
+      </nav>
+      <div class="tab-content" id="nav-tabContent">
+        <%= simple_form_for(current_user, url: dashboard_profiles_path, html: { method: :put }) do |f| %>
+          <div class="tab-pane fade show active" id="nav-my-info" role="tabpanel" aria-labelledby="nav-my-info-tab">
+            <div class="form-inputs">
+              <%= f.input :first_name %>
+              <%= f.input :last_name %>
+              <%= f.input :avatar %>
+              <%= f.input :avatar_cache, as: :hidden %>
+              <%= f.input :bio %>
+              <%= f.input :phone %>
+            </div>
+          </div>
+          <div class="tab-pane fade" id="nav-farm" role="tabpanel"
+          aria-labelledby="nav-farm-tab">
+            <div class="form-inputs">
+              <%= f.input :farm_name %>
+              <%= f.input :farm_location %>
+              <%= f.input :farm_picture %>
+              <%= f.input :farm_picture_cache, as: :hidden %>
+              <%= f.input :farm_size %>
+              <%= f.input :farm_certification %>
+            </div>
+            <div class="form-actions">
+              <%= f.button :submit, "Save" %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

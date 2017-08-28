@@ -1,5 +1,6 @@
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
+<<<<<<< HEAD
 #
 # Examples:
 #
@@ -7,6 +8,8 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require "csv"
 require_relative "array"
+=======
+>>>>>>> fa1f2fdc648410527068f6712aa57b2abeb4e8ac
 
 puts "Creating categories and products"
 Category.destroy_all
@@ -17,8 +20,8 @@ categories = [ "Fruit products", "Vegetable products" ]
 products = [[ "Apples", "Apricots", "Cherries", "Grapes", "Kiwis", "Lemons",
                    "Melons", "Oranges", "Peaches", "Pears", "Strawberries",
                    "Watermelons" ],
-                 [ "Asparagus", "Beans", "Cabbage", "Carrots", "Cauliflowers",
-                   "Cucumber", "Eggplants", "Garlic", "Lettuce", "Mushrooms",
+                 [ "Asparagus", "Beans", "Cabbages", "Carrots", "Cauliflowers",
+                   "Cucumbers", "Eggplants", "Garlic", "Lettuces", "Mushrooms",
                    "Onions", "Peppers", "Tomatoes Round"]]
 
 categories.each_with_index do |category, index|
