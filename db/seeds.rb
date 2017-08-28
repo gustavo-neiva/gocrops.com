@@ -14,8 +14,8 @@ categories = [ "Fruit products", "Vegetable products" ]
 products = [[ "Apples", "Apricots", "Cherries", "Grapes", "Kiwis", "Lemons",
                    "Melons", "Oranges", "Peaches", "Pears", "Strawberries",
                    "Watermelons" ],
-                 [ "Asparagus", "Beans", "Cabbage", "Carrots", "Cauliflowers",
-                   "Cucumber", "Eggplants", "Garlic", "Lettuce", "Mushrooms",
+                 [ "Asparagus", "Beans", "Cabbages", "Carrots", "Cauliflowers",
+                   "Cucumbers", "Eggplants", "Garlic", "Lettuces", "Mushrooms",
                    "Onions", "Peppers", "Tomatoes Round"]]
 
 categories.each_with_index do |category, index|

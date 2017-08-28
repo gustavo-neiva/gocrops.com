@@ -1,3 +1,5 @@
+require 'tealeaves'
+
 class Product < ApplicationRecord
   belongs_to :category
   has_many :crops
@@ -20,6 +22,28 @@ class Product < ApplicationRecord
 
     # Call first object, get market price, convert to Fixnum and divide by 100 to receive price/kg
     price_current_month.first.market_price.to_f / 100
+
+  end
+
+  def foreceast_next_month
+    #create empty array to store all marketprices for forecast gem
+    data = []
+
+    # find all priceinfo objects for the product
+    all_objects = PriceInformation.where(product_id: self.id)
+
+    # store all marketprices in data array
+    all_objects.each do |object|
+      data << object.market_price.to_f
+    end
+
+    # make forecast for next month
+
+    price = TeaLeaves.forecast(data, 1)
+
+    price = price / 100
+
+    price.round(2)
 
   end
 
