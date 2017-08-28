@@ -35,14 +35,13 @@
 	</div>
 </div>
 
-<%= @user.latitude %>
-<br>
-<%= @user.longitude %>
+<%#= @user.latitude %>
+<%#= @user.longitude %>
 
-<div id="map" style="width: 100%; height: 600px;"></div>
+<!-- <div id="map" style="width: 100%; height: 600px;"></div> -->
 
-<% content_for(:after_js) do %>
-  <script>
+<%# content_for(:after_js) do %>
+  <!-- <script>
     $(document).ready(function() {
       var location = <%= raw @instrument_coordinates.to_json %>;
       var map = new google.maps.Map(document.getElementById('map'), {
@@ -54,6 +53,5 @@
         map: map
       });
     });
-  </script>
-<% end %>
-
+  </script> -->
+<%# end %>
