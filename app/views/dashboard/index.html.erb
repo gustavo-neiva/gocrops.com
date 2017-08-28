@@ -1,31 +1,23 @@
-<% current_user.crops.each do |crop| %>
-  <% product = Product.find(crop.product_id) %>
-
-  <%= product.current_month %>
-  <%= image_tag "icons/#{product.name.downcase}.svg" %>
-    <%= product.add_icon_to_product %> alt="icon <%= product.name.downcase %>">
-  <%= line_chart product.historic_data_array('20150101', '20170801') %>
-<% end %>
-
 <div class="grid-dashboard__index">
   <h2 class="section-main-title section-title">My Crops Trends</h2>
 	<div class="section-main">
-		<div class="trend_card box-component grid-trends">
-			<div class="trend-product trend-text__heavy">
-        <span>
-          <i class="fa fa-cutlery" aria-hidden="true"></i>
-        </span>
-        <p>Food name</p>
-      </div>
-			<p class="current-price-title price-trend-title">Current Month</p>
-			<span class="current-price-content trend-text__heavy">$55 / 1kg</span>
-			<p class="next-price-title price-trend-title">Next Month</p>
-			<span class="next-price-content trend-text__heavy">$55 / 1kg</span>
-      <div class="trend-arrow trend-text__heavy">
-        <i class="fa fa-arrow-up" aria-hidden="true"></i>
-      </div>
-      <div class="graph">graph graph</div>
-		</div>
+    <% current_user.crops.each do |crop| %>
+      <% product = Product.find(crop.product_id) %>
+  		<div class="trend_card box-component grid-trends">
+  			<div class="trend-product trend-text__heavy">
+            <%= image_tag "icons/#{product.name.downcase}.svg" %>
+          <p><%= product.name.downcase %></p>
+        </div>
+  			<p class="current-price-title price-trend-title">Current Month</p>
+  			<span class="current-price-content trend-text__heavy">$50/ 1kg</span>
+  			<p class="next-price-title price-trend-title">Next Month</p>
+  			<span class="next-price-content trend-text__heavy">$55 / 1kg</span>
+        <div class="trend-arrow trend-text__heavy">
+          <i class="fa fa-arrow-up" aria-hidden="true"></i>
+        </div>
+        <div class="trend-graph graph"><%= line_chart product.historic_data_array('20150101', '20170801') %></div>
+  		</div>
+    <% end %>
 	</div>
   <h2 class="section-sidebar-title section-title">Utilities</h2>
 	<div class="section-sidebar grid-utilities">

@@ -28,12 +28,15 @@
 .trend-product {
 	grid-area: product;
   color: $primary-color;
+  display: flex;
+  height: 80px;
 }
 
 .trend-arrow {
   grid-area: arrow;
   justify-content: center;
   background-color: $primary-color;
+  color: white;
 }
 
 .trend-graph {
@@ -67,4 +70,8 @@
 .trend-text__heavy {
   font-size: 2em;
   font-weight: 700;
+}
+
+.product-icon {
+  max-width: 60px;
 }
