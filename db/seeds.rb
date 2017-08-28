@@ -61,7 +61,7 @@ round = 0
     production: (1..9999).to_a.sample
   )
   crop.save!
-  sleep(0.012)
+  sleep(0.020)
   puts round += 1
 end
 
