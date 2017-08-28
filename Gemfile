@@ -17,6 +17,7 @@ gem 'inherited_resources', github: 'activeadmin/inherited_resources'
 gem "geocoder"
 gem "coffee-rails"
 gem "gmaps4rails"
+gem "faker"
 
 source 'https://rails-assets.org' do
   gem "rails-assets-underscore"
