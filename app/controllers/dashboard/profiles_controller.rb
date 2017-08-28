@@ -1,8 +1,8 @@
 class Dashboard::ProfilesController < ApplicationController
   layout "dashboard"
 
-  before_action :set_user, only: [:edit, :update, :show]
-  before_action :active_navbar, only: [:edit, :edit_farm]
+  before_action :set_user, only: [:edit, :update]
+  before_action :active_navbar, only: [:edit]
 
   def edit
     @user = current_user
@@ -10,7 +10,7 @@ class Dashboard::ProfilesController < ApplicationController
 
   def update
     if @user.update(user_info_params)
-      redirect_to edit_dashboard_farms_path
+      redirect_to dashboard_profile_path
     else
       render :edit
     end
@@ -31,6 +31,8 @@ class Dashboard::ProfilesController < ApplicationController
 
   def user_info_params
     params.require(:user).permit(:first_name, :last_name, :facebook_picture_url,
-                                 :bio, :phone, :avatar, :avatar_cache)
+                                 :bio, :phone, :avatar, :avatar_cache,
+                                 :farm_location, :farm_name, :farm_size, :farm_certification,
+                                 :farm_picture, :farm_picture_cache)
   end
 end

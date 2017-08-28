@@ -1,15 +1,24 @@
-<%= simple_form_for(@user, url: dashboard_profiles_path, html: { method: :put }) do |f| %>
-  <%= f.error_notification %>
-
-  <div class="form-inputs">
-    <%= f.input :bio %>
-    <%= f.input :avatar %>
-    <%= f.input :first_name %>
-    <%= f.input :last_name %>
-    <%= f.input :phone %>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-sm-2">
+      <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist">
+        <a class="nav-link active" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-expanded="true">My Info</a>
+        <a class="nav-link" id="v-pills-farm-tab" data-toggle="pill" href="#v-pills-farm" role="tab" aria-controls="v-pills-farm" aria-expanded="true">Farm</a>
+        <a class="nav-link" id="v-pills-account-tab" data-toggle="pill" href="#v-pills-account" role="tab" aria-controls="v-pills-account" aria-expanded="true">Account</a>
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="tab-content" id="v-pills-tabContent">
+        <div class="tab-pane fade show active" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+          <%= render "dashboard/shared/form-profile" %>
+        </div>
+        <div class="tab-pane fade disabled" id="v-pills-farm" role="tabpanel" aria-labelledby="v-pills-farm-tab" aria-disabled="true">
+          <%= render "dashboard/shared/form-farm" %>
+        </div>
+        <div class="tab-pane fade" id="v-pills-account" role="tabpanel" aria-labelledby="v-pills-account-tab">
+          <%= render "devise/registrations/edit-partial" %>
+        </div>
+      </div>
+    </div>
   </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, "Update" %>
-  </div>
-<% end %>
+</div>
