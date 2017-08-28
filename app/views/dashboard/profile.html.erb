@@ -19,7 +19,7 @@
 		<div class="sub-section-farm-info box-section__padding">
 			<h3 class="sub-section-header"><%= @user.farm_name %></h3>
 			<h4 class="sub-section-title">Address</h4>
-			<p><%= @user.farm_location %></p>
+			<div id="map" style="width: 100%; height: 300px;"></div>
 		</div>
 	</div>
 	<div class="aside box-component box-section box-section__padding">
@@ -35,15 +35,10 @@
 	</div>
 </div>
 
-<%#= @user.latitude %>
-<%#= @user.longitude %>
-
-<!-- <div id="map" style="width: 100%; height: 600px;"></div> -->
-
-<%# content_for(:after_js) do %>
-  <!-- <script>
+<% content_for(:after_js) do %>
+  <script>
     $(document).ready(function() {
-      var location = <%= raw @instrument_coordinates.to_json %>;
+      var location = <%= raw @user_coordinates.to_json %>;
       var map = new google.maps.Map(document.getElementById('map'), {
         zoom: 14,
         center: location
@@ -53,5 +48,5 @@
         map: map
       });
     });
-  </script> -->
-<%# end %>
+  </script>
+<% end %>

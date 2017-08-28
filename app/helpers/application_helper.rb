@@ -1,22 +1,23 @@
 module ApplicationHelper
 
   def session_weather
-      return session[:weather] if session[:weather].present?
-
-      return {"coord"=>{"lon"=>-43.21, "lat"=>-22.9},
-       "weather"=>[{"id"=>800, "main"=>"Clear", "description"=>"clear sky", "icon"=>"01d"}],
-       "base"=>"stations",
-       "main"=>{"temp"=>23.77, "pressure"=>1023, "humidity"=>50, "temp_min"=>22, "temp_max"=>25},
-       "visibility"=>10000,
-       "wind"=>{"speed"=>2.1, "deg"=>330},
-       "clouds"=>{"all"=>0},
-       "dt"=>1503669600,
-       "sys"=>{"type"=>1, "id"=>4565, "message"=>0.0934, "country"=>"BR", "sunrise"=>1503652132, "sunset"=>1503693645},
-       "id"=>3451190,
-       "name"=>"Rio de Janeiro",
-       "cod"=>200
-     }
-
+      if session[:weather].present?
+        return session[:weather]
+      else
+        return {"coord"=>{"lon"=>-43.21, "lat"=>-22.9},
+         "weather"=>[{"id"=>800, "main"=>"Clear", "description"=>"clear sky", "icon"=>"01d"}],
+         "base"=>"stations",
+         "main"=>{"temp"=>23.77, "pressure"=>1023, "humidity"=>50, "temp_min"=>22, "temp_max"=>25},
+         "visibility"=>10000,
+         "wind"=>{"speed"=>2.1, "deg"=>330},
+         "clouds"=>{"all"=>0},
+         "dt"=>1503669600,
+         "sys"=>{"type"=>1, "id"=>4565, "message"=>0.0934, "country"=>"BR", "sunrise"=>1503652132, "sunset"=>1503693645},
+         "id"=>3451190,
+         "name"=>"Rio de Janeiro",
+         "cod"=>200
+       }
+     end
   end
 
 
