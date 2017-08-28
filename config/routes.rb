@@ -4,10 +4,13 @@ Rails.application.routes.draw do
   get 'dashboard/profile'
   get 'dashboard/crops'
 
+  # This route forces user to complete profile after signup
+  get 'dashboard/complete', to: 'dashboard#complete', as: 'dashboard_profile_complete'
+
   ActiveAdmin.routes(self)
 
   devise_for :users,
-  controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
+  controllers: { omniauth_callbacks: 'users/omniauth_callbacks', registrations: "registrations" }
 
   namespace :dashboard do
     resource :profiles, only: [:edit, :update]

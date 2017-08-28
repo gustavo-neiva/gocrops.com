@@ -8,6 +8,10 @@ class Dashboard::ProfilesController < ApplicationController
     @user = current_user
   end
 
+  def complete
+    @user = current_user
+  end
+
   def update
     if @user.update(user_info_params)
       redirect_to dashboard_profile_path
