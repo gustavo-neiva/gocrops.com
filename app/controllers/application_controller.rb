@@ -16,8 +16,6 @@ class ApplicationController < ActionController::Base
     options = { units: "metric", APPID: ENV['OpenWeather'] }
     if session[:weather].nil? && current_user && current_user.farm_location
       session[:weather] = OpenWeather::Current.city(current_user.farm_location, options)
-    else
-      session[:weather] = OpenWeather::Current.city("Cuiaba, BR", options)
     end
   end
 

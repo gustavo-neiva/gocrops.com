@@ -14,9 +14,9 @@ categories = [ "Fruit products", "Vegetable products" ]
 products = [[ "Apples", "Apricots", "Cherries", "Grapes", "Kiwis", "Lemons",
                    "Melons", "Oranges", "Peaches", "Pears", "Strawberries",
                    "Watermelons" ],
-                 [ "Asparagus", "Beans", "Cabbage", "Carrots", "Cauliflower",
+                 [ "Asparagus", "Beans", "Cabbage", "Carrots", "Cauliflowers",
                    "Cucumber", "Eggplants", "Garlic", "Lettuce", "Mushrooms",
-                   "Onions", "Peppers", "Tomatoes Round"]]
+                   "Onions", "Peppers", "Tomatoes"]]
 
 categories.each_with_index do |category, index|
   category_new = Category.new(name: category, unit: "100 kg")

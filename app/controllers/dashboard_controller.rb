@@ -16,7 +16,7 @@ class DashboardController < ApplicationController
   def profile
     @profile_class = "navbar-dashboard-link__active"
     @user = current_user
-    @user = User.where.not(latitude: nil, longitude: nil)
+    # @user = User.where.not(latitude: nil, longitude: nil)
     @user_coordinates = { lat: @user.latitude, lng: @user.longitude }
 
     # @user = current_user
