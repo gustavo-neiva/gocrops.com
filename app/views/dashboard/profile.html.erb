@@ -15,8 +15,8 @@
 	</div>
 	<h2 class="section-sidebar-title section-title">Farm</h2>
 	<div class="section-sidebar box-component box-section">
-		<img src="https://unsplash.it/600/400?image=915" alt="Farm name" class="responsive-image farm-profile-picture">
-    <!-- <%= cl_image_tag @user.farm_picture, class: "responsive-image user-profile-picture" %> -->
+		<!-- <img src="https://unsplash.it/600/400?image=915" alt="Farm name" class="responsive-image farm-profile-picture"> -->
+    <%= cl_image_tag @user.farm_picture, class: "responsive-image farm-profile-picture" %>
 		<div class="sub-section-farm-info box-section__padding">
 			<h3 class="sub-section-header"><%= @user.farm_name %></h3>
 			<h4 class="sub-section-title">Address</h4>
