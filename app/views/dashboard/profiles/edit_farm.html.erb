@@ -1,10 +1,9 @@
 <h2>Edit Farm</h2>
 
-<%= simple_form_for @user, url: dashboard_farms_path, method: :update do |f| %>
+<%= simple_form_for @user, url: dashboard_farms_path do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :email, required: true, autofocus: true %>
     <%= f.input :farm_name %>
     <%= f.input :farm_location %>
     <%= f.input :farm_size %>

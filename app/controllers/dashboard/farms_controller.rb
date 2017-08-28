@@ -1,4 +1,6 @@
 class Dashboard::FarmsController < ApplicationController
+  layout "dashboard"
+  
   before_action do
     @user = current_user
   end

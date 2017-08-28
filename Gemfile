@@ -33,6 +33,9 @@ gem 'uglifier'
 # Add standard descriptive methods (doc: https://github.com/thirtysixthspan/descriptive_statistics)
 gem 'descriptive_statistics', '~> 2.4.0', :require => 'descriptive_statistics/safe'
 
+#Graphing gem
+gem "chartkick"
+
 group :development, :test do
   gem 'pry-byebug'
   gem 'pry-rails'

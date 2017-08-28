@@ -4,6 +4,8 @@
 //= require cable
 //= require underscore
 //= require gmaps/google
+//= require Chart.bundle
+//= require chartkick
 
 // We can't use require with ActiveAdmin
 // require_tree .
