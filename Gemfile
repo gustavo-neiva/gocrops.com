@@ -36,6 +36,9 @@ gem 'descriptive_statistics', '~> 2.4.0', :require => 'descriptive_statistics/sa
 #Graphing gem
 gem "chartkick"
 
+# Forecasting gem
+gem "tealeaves"
+
 group :development, :test do
   gem 'pry-byebug'
   gem 'pry-rails'
