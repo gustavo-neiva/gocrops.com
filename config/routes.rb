@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root to: 'pages#home'
   get 'dashboard', to: 'dashboard#index'
   get 'dashboard/profile'
   get 'dashboard/crops'
@@ -7,8 +8,6 @@ Rails.application.routes.draw do
 
   devise_for :users,
   controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
-
-  root to: 'pages#home'
 
   namespace :dashboard do
     resource :farms, only: [:edit, :update]

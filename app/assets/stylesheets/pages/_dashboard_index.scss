@@ -1,0 +1,77 @@
+// ***********************
+// Utilities Grid
+// ***********************
+
+.grid-utilities {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(200px, 1fr));
+  grid-gap: 15px;
+}
+
+// ***********************
+// Trends Grid
+// ***********************
+
+.grid-trends {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 90px;
+  grid-template-rows: auto auto auto;
+  grid-template-areas:
+    "product t_current t_next arrow"
+    "product c_current c_next arrow"
+    "graph graph graph graph";
+  grid-gap: 15px;
+}
+
+// GRID SECTIONS
+
+.trend-product {
+	grid-area: product;
+  color: $primary-color;
+  display: flex;
+  height: 80px;
+}
+
+.trend-arrow {
+  grid-area: arrow;
+  justify-content: center;
+  background-color: $primary-color;
+  color: white;
+}
+
+.trend-graph {
+  grid-area: graph;
+}
+
+.current-price-title {
+	grid-area: t_current;
+}
+
+.current-price-content {
+	grid-area: c_current;
+  color: $support-current-color;
+}
+
+.next-price-title {
+	grid-area: t_next;
+}
+
+.next-price-content {
+	grid-area: c_next;
+  color: $primary-color;
+}
+
+.price-trend-title {
+  color: rgb(130, 130, 130);
+  text-transform: uppercase;
+  font-size: 0.9em;
+}
+
+.trend-text__heavy {
+  font-size: 2em;
+  font-weight: 700;
+}
+
+.product-icon {
+  max-width: 60px;
+}

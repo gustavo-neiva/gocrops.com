@@ -1,39 +1,44 @@
-<% current_user.crops.each do |crop| %>
-  <% product = Product.find(crop.product_id) %>
-
-  <%= product.current_month %>
-  <%= image_tag "icons/#{product.name.downcase}.svg" %>
-    <%= product.add_icon_to_product %> alt="icon <%= product.name.downcase %>">
-  <%= line_chart product.historic_data_array('20150101', '20170801') %>
-<% end %>
-
 <div class="grid-dashboard__index">
-  <h2 class="section-main-title">My Crops Trends</h2>
-	<div class="section-main trends">
-		<div class="trend_card">
-			<div class="crop_icon">Crop Icon</div>
-			<p class="crop_name">Radish</p>
-			<p>Current Month</p>
-			<span>$55 / 1kg</span>
-			<p>Next Month</p>
-			<span>$55 / 1kg</span>
-		</div>
+  <h2 class="section-main-title section-title">My Crops Trends</h2>
+	<div class="section-main">
+    <% current_user.crops.each do |crop| %>
+      <% product = Product.find(crop.product_id) %>
+  		<div class="trend_card box-component grid-trends">
+  			<div class="trend-product trend-text__heavy">
+            <span class="ic-<%=product.name.downcase%>"></span>
+          <p><%= product.name.downcase %></p>
+        </div>
+  			<p class="current-price-title price-trend-title">Current Month</p>
+  			<span class="current-price-content trend-text__heavy">$50/ 1kg</span>
+  			<p class="next-price-title price-trend-title">Next Month</p>
+  			<span class="next-price-content trend-text__heavy">$55 / 1kg</span>
+        <div class="trend-arrow trend-text__heavy">
+          <i class="fa fa-arrow-up" aria-hidden="true"></i>
+        </div>
+        <div class="trend-graph graph"><%= line_chart product.historic_data_array('20150101', '20170801') %></div>
+  		</div>
+    <% end %>
 	</div>
-  <h2 class="section-sidebar-title">Utilities</h2>
-	<div class="section-sidebar utilities">
-    <div class="utility_card box-component">
-			<div class="utility_icon">Clouds</div>
-			<span><%= clouds %></span>
+  <h2 class="section-sidebar-title section-title">Utilities</h2>
+	<div class="section-sidebar grid-utilities">
+    <div class="utility_card box-component box-section__padding">
+			<div class="utility_icon">Sky</div>
+      <img src="http://openweathermap.org/img/w/<%="#{session[:weather]["weather"].first["icon"]}.png"%>" alt="">
+			<span><%= weather_description %></span>
 		</div>
-    <div class="utility_card box-component">
+    <div class="utility_card box-component box-section__padding">
 			<div class="utility_icon">Wind Seed</div>
 			<span><%= "#{wind_speed.round(2).to_s} m/s" %></span>
 		</div>
-    <div class="utility_card box-component">
+    <div class="utility_card box-component box-section__padding">
 			<div class="utility_icon">Temperature</div>
 			<span><%= "#{temp_max.round(2).to_s} °C" %></span>
 		</div>
-    <div class="utility_card box-component">
+    <div class="utility_card box-component box-section__padding">
+			<div class="utility_icon">Air humidity</div>
+			<span><%= "#{humidity.round(2).to_s}%" %></span>
+		</div>
+    <div class="utility_card box-component box-section__padding">
 			<div class="utility_icon">Sun Hours</div>
       <% sunrise_time %>
       <% sunset_time %>
@@ -41,6 +46,7 @@
 		</div>
 	</div>
 </div>
+<<<<<<< HEAD
 
 <%= controller.action_name %>
 
@@ -58,3 +64,5 @@
   <td><%# sunset_time.strftime("%X") %></td>
   <td><%= hours_sun %></td>
 </table>
+=======
+>>>>>>> 1eed318fb46052049001d4d0866c6c3831ec8935
