@@ -10,8 +10,8 @@ class User < ApplicationRecord
   mount_uploader :avatar, PictureUploader
   mount_uploader :farm_picture, PictureUploader
 
-  geocoded_by :address
-  after_validation :geocode, if: :address_changed?
+  geocoded_by :farm_location
+  after_validation :geocode, if: :farm_location_changed?
 
   def self.find_for_facebook_oauth(auth)
      user_params = auth.slice(:provider, :uid)
