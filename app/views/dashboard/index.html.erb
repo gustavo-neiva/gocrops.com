@@ -23,8 +23,8 @@
 	<div class="section-sidebar grid-utilities">
     <div class="utility_card box-component box-section__padding">
 			<div class="utility_icon">Sky</div>
-      <img src="http://openweathermap.org/img/w/<%="#{session[:weather]["weather"].first["icon"]}.png"%>" alt="">
-			<span><%= weather_description %></span>
+      <img src="http://openweathermap.org/img/w/<%="#{weather_object["weather"].first["icon"]}.png"%>" alt="">
+			<span><%=  main_weather %></span>
 		</div>
     <div class="utility_card box-component box-section__padding">
 			<div class="utility_icon">Wind Seed</div>
@@ -32,7 +32,7 @@
 		</div>
     <div class="utility_card box-component box-section__padding">
 			<div class="utility_icon">Temperature</div>
-			<span><%= "#{temp_max.round(2).to_s} °C" %></span>
+			<span><%= "#{temperature.round(2).to_s} °C" %></span>
 		</div>
     <div class="utility_card box-component box-section__padding">
 			<div class="utility_icon">Air humidity</div>
@@ -46,23 +46,5 @@
 		</div>
 	</div>
 </div>
-<<<<<<< HEAD
 
-<%= controller.action_name %>
-
-<table>
-  <td><%= "Weather in #{current_user.farm_location}  #{main_weather} #{Time.now.strftime("%X")}" %></td>
-  <td><img src="http://openweathermap.org/img/w/<%="#{weather_session["weather"].first["icon"]}.png"%>" alt=""></td>
-  <td><%=  weather_description %></td>
-  <td><%= "Temperature #{temperature.round(2).to_s} °C" %></td>
-  <td><%= "Minimun temperature  #{temp_max.round(2).to_s} °C"  %></td>
-  <td><%= "Maximun temperature #{temp_min.round(2).to_s} °C "%></td>
-  <td><%= "Air humidity  #{humidity.round(2).to_s}%" %></td>
-  <td><%= "Wind speed #{wind_speed.round(2).to_s} m/s "%></td>
-  <td><%= clouds %></td>
-  <td><%# sunrise_time.strftime("%X")  %></td>
-  <td><%# sunset_time.strftime("%X") %></td>
-  <td><%= hours_sun %></td>
-</table>
-=======
->>>>>>> 1eed318fb46052049001d4d0866c6c3831ec8935
+<%#= controller.action_name %>
