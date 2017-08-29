@@ -1,2 +1,0 @@
-class HarvestController < ApplicationController
-end
