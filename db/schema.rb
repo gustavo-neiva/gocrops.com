@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170828153705) do
+ActiveRecord::Schema.define(version: 20170829204630) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -50,6 +50,15 @@ ActiveRecord::Schema.define(version: 20170828153705) do
     t.index ["user_id"], name: "index_crops_on_user_id"
   end
 
+  create_table "harvests", force: :cascade do |t|
+    t.date "date"
+    t.float "quantity"
+    t.bigint "crop_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["crop_id"], name: "index_harvests_on_crop_id"
+  end
+
   create_table "price_informations", force: :cascade do |t|
     t.bigint "product_id"
     t.decimal "market_price"
@@ -66,6 +75,15 @@ ActiveRecord::Schema.define(version: 20170828153705) do
     t.datetime "updated_at", null: false
     t.string "icon"
     t.index ["category_id"], name: "index_products_on_category_id"
+  end
+
+  create_table "sells", force: :cascade do |t|
+    t.date "date"
+    t.float "quantity"
+    t.bigint "crop_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["crop_id"], name: "index_sells_on_crop_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -105,6 +123,8 @@ ActiveRecord::Schema.define(version: 20170828153705) do
 
   add_foreign_key "crops", "products"
   add_foreign_key "crops", "users"
+  add_foreign_key "harvests", "crops"
   add_foreign_key "price_informations", "products"
   add_foreign_key "products", "categories"
+  add_foreign_key "sells", "crops"
 end
