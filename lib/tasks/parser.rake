@@ -2,13 +2,13 @@ require "csv"
 require "open-uri"
 
 desc "Parsing historic price information"
-task :parse_csv do
+task :parse_csv => :environment do
   parse_and_save
   puts "Parsing done!"
 end
 
 desc "Parsing historic price information"
-task :parse_by_hand do
+task :parse_by_hand => :environment do
   parse_and_save_by_hand
   puts "Parsing by hand done!"
 end
