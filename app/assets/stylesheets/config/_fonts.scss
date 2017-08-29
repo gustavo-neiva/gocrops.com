@@ -868,12 +868,15 @@ $headers-font: "Raleway", "Helvetica", "sans-serif";
 }
 .wi-direction-up-right:before {
   content: "\f057";
+  font-size: 5em;
 }
-.wi-direction-right:before {
+.wi-direction-stable-right:before {
   content: "\f04d";
+  font-size: 4.5em;
 }
 .wi-direction-down-right:before {
   content: "\f088";
+  font-size: 5em;
 }
 .wi-direction-down:before {
   content: "\f044";
@@ -1943,5 +1946,3 @@ $headers-font: "Raleway", "Helvetica", "sans-serif";
 .wi-wu-unknown:before {
   content: "\f00d";
 }
-
-

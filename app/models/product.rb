@@ -48,18 +48,30 @@ class Product < ApplicationRecord
 
   end
 
-  def choose_css_class
+  # Return a string to set trend--status-- class
+  def set_trend_status
     product_prices = self.price_informations.map { |o| o.market_price.to_f }
-    product_std = product_prices.standard_deviation
-    if self.forecast_next_month > self.current_month + product_std
+    product_std = product_prices.standard_deviation / 100
+    if self.forecast_next_month > self.current_month + product_std * 0.5
       return "up"
-    elsif self.forecast_next_month < self.current_month - product_std
+    elsif self.forecast_next_month < self.current_month - product_std * 0.5
       return "down"
     else
       return "stable"
     end
   end
 
+  # Return graph color based on trend status
+  def set_graph_status
+    product_prices = self.price_informations.map { |o| o.market_price.to_f }
+    product_std = product_prices.standard_deviation
+    if self.forecast_next_month > self.current_month + product_std
+      return "#5BE443"
+    elsif self.forecast_next_month < self.current_month - product_std
+      return "#DD4011"
+    else
+      return "#EDD520"
+    end
+  end
+
 end
-
-
