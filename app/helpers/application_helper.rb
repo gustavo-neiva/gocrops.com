@@ -54,3 +54,40 @@ module ApplicationHelper
     @hours_sun = ((@sunset - @sunrise)/3600).round(2)
   end
 end
+
+def weather_icon_change
+    case weather_object["weather"].first["icon"]
+    when "01d"
+      "day-sunny"
+    when "02d"
+      "day-cloud"
+    when "03d"
+      "cloudy"
+    when "04d"
+      "cloudy"
+    when "09d"
+      "day-showers"
+    when "10d"
+      "rain-mix"
+    when "11d"
+      "day-thunderstorm"
+    when "13d"
+      "day-snow-wind"
+    when "01n"
+      "night-clear"
+    when "02n"
+      "night-alt-cloudy"
+    when "03n"
+      "cloud"
+    when "04n"
+      "cloudy"
+    when "09n"
+      "night-showers"
+    when "10n"
+      "night-alt-rain"
+    when "11n"
+      "night-thunderstorm"
+    when "13n"
+      "night-alt-snow"
+    end
+end
