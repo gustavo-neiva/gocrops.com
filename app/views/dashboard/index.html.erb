@@ -2,37 +2,9 @@
   <h2 class="section-main-title section-title">My Crops Trends</h2>
 	<div class="section-main">
     <% current_user.crops.each do |crop| %>
-<<<<<<< HEAD
+
       <%= render 'trend_card', product: crop.product %>
-=======
-      <% product = Product.find(crop.product_id) %>
-  		<div class="trend_card box-component grid-trends">
-  			<div class="trend-product trend-text__heavy">
-            <span class="ic-<%=product.name.split.join.downcase%>"></span>
-          <p><%= product.name %></p>
-          <!-- Form for Dates should go here -->
-          <%= render partial: "datepicker" %>
 
-
-        </div>
-  			<p class="current-price-title price-trend-title">Current Month</p>
-  			<span class="current-price-content trend-text__heavy">€<%= product.current_month %>/kg</span>
-  			<p class="next-price-title price-trend-title">Next Month</p>
-
-
-  			<span class="next-price-content trend-text__heavy">
-          €<%= product.forecast_next_month %>/kg
-        </span>
-
-
-        <div class="trend-arrow trend-text__heavy">
-          <i class="fa fa-arrow-up" aria-hidden="true"></i>
-        </div>
-        <div class="trend-graph graph">
-          <%= area_chart product.historic_data_array(@start, @end) if @start && @end %>
-        </div>
-  		</div>
->>>>>>> c3f955f25fd85ad6647103358c81a5e8bc2c9006
     <% end %>
 	</div>
   <h2 class="section-sidebar-title section-title">Utilities</h2>
@@ -65,8 +37,8 @@
 
 <% content_for(:after_js) do %>
   <script>
-    $('.js-trend').on('click', function(){
-      $(this).children().toggleClass('hidden');
+    $('.js-trend__card').on('click', function(){
+      $(this).next().toggleClass('hidden');
     });
   </script>
 <% end %>
