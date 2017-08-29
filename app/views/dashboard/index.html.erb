@@ -6,7 +6,11 @@
   		<div class="trend_card box-component grid-trends">
   			<div class="trend-product trend-text__heavy">
             <span class="ic-<%=product.name.split.join.downcase%>"></span>
-          <p><%= product.name.downcase %></p>
+          <p><%= product.name %></p>
+          <!-- Form for Dates should go here -->
+          <%= render partial: "datepicker" %>
+
+
         </div>
   			<p class="current-price-title price-trend-title">Current Month</p>
   			<span class="current-price-content trend-text__heavy">€<%= product.current_month %>/kg</span>
@@ -21,7 +25,9 @@
         <div class="trend-arrow trend-text__heavy">
           <i class="fa fa-arrow-up" aria-hidden="true"></i>
         </div>
-        <div class="trend-graph graph"><%= line_chart product.historic_data_array('20150101', '20170801') %></div>
+        <div class="trend-graph graph">
+          <%= area_chart product.historic_data_array(@start, @end) if @start && @end %>
+        </div>
   		</div>
     <% end %>
 	</div>

@@ -40,6 +40,11 @@ gem "chartkick"
 # Forecasting gem
 gem "tealeaves"
 
+#DateTimePicker
+gem 'momentjs-rails', '>= 2.9.0'
+gem 'bootstrap3-datetimepicker-rails', '~> 4.17.47'
+gem 'bootstrap-sass'
+
 group :development, :test do
   gem 'pry-byebug'
   gem 'pry-rails'
