@@ -1,18 +1,19 @@
 <p>Pick your dates</p>
 
 <%= form_tag dashboard_path, method: :get do %>
+<%= hidden_field_tag :product_id, product.id %>
   <div style="position: relative">
-    <%= text_field_tag :start_date, "", id: "datetimepicker1" %>
+    <%= text_field_tag :start_date, "", id: "datetimepicker-#{product.id}-1" %>
   </div>
   <div style="position: relative">
-    <%= text_field_tag :end_date, "", id: "datetimepicker2"  %>
+    <%= text_field_tag :end_date, "", id: "datetimepicker-#{product.id}-2"  %>
   </div>
   <%= submit_tag :submit %>
 <% end %>
 
 <% content_for(:after_js) do %>
   <script type="text/javascript">
-    $('#datetimepicker1').datetimepicker( {format: "YYYY/MM/DD" } );
-    $('#datetimepicker2').datetimepicker( {format: "YYYY/MM/DD" } );
+    $('#datetimepicker-<%= product.id %>-1').datetimepicker( {format: "YYYY/MM/DD" } );
+    $('#datetimepicker-<%= product.id %>-2').datetimepicker( {format: "YYYY/MM/DD" } );
   </script>
 <% end %>

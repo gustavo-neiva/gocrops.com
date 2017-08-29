@@ -13,12 +13,11 @@
       €<%= product.forecast_next_month %>/kg
     </span>
     <span class="trend__arrow trend--status--<%= product.set_trend_status %> wi wi-direction-<%= product.set_trend_status %>-right">
-      <!-- <i class="fa fa-arrow-<%#= product.set_trend_status %>" aria-hidden="true"></i> -->
     </span>
   </div>
   <div class="trend__graph hidden">
-    <%= render partial: "datepicker" %>
-    <% if @start && @end %>
+    <%= render "datepicker", product: product %>
+    <% if @start && @end && @product_id == product.id.to_s %>
       <%= area_chart product.historic_data_array(@start, @end), colors: [product.set_graph_status]  %>
     <% end %>
   </div>

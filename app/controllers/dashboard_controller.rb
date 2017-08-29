@@ -6,6 +6,7 @@ class DashboardController < ApplicationController
     if params[:start_date].present? && params[:end_date].present?
       @start = params[:start_date]
       @end = params[:end_date]
+      @product_id = params[:product_id]
     end
     @dashboard_class = "navbar-dashboard-link__active"
     @products = Product.all
