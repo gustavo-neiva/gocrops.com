@@ -1,0 +1,22 @@
+<div class="trend box-component js-trend">
+  <div class="trend__card">
+    <span class="trend__icon trend--status--up ic-<%=product.name.split.join.downcase%>"></span>
+    <span class="trend__name trend--status--up">
+      <%= product.name.capitalize %>
+    </span>
+    <p class="trend__current__title">Current Month</p>
+    <span class="trend__current__value">
+      €<%= product.current_month %>/kg
+    </span>
+    <p class="trend__next__title">Next Month</p>
+    <span class="trend__next__value trend--status--up">
+      €<%= product.forecast_next_month %>/kg
+    </span>
+    <span class="trend__arrow trend--status--up">
+      <i class="fa fa-arrow-up" aria-hidden="true"></i>
+    </span>
+  </div>
+  <div class="trend__graph hidden">
+    <%= line_chart product.historic_data_array('20150101', '20170801') %>
+  </div>
+</div>

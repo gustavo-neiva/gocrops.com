@@ -12,66 +12,80 @@
 // Trends Grid
 // ***********************
 
-.grid-trends {
-  display: grid;
-  grid-template-columns: 2fr 1fr 1fr 90px;
-  grid-template-rows: auto auto auto;
-  grid-template-areas:
-    "product t_current t_next arrow"
-    "product c_current c_next arrow"
-    "graph graph graph graph";
-  grid-gap: 15px;
+.trend__card {
+	display: grid;
+	grid-template-areas:
+		"icon name c-title n-title arrow"
+		"icon name c-value n-value arrow";
+	align-items: center;
+	justify-content: space-around;
+	padding: 1.2em 0.8em;
 }
 
 // GRID SECTIONS
 
-.trend-product {
-	grid-area: product;
-  color: $primary-color;
-  display: flex;
-  height: 80px;
+.trend {
+	margin-bottom: 15px;
 }
 
-.trend-arrow {
-  grid-area: arrow;
-  justify-content: center;
-  background-color: $primary-color;
-  color: white;
+.trend__icon {
+	grid-area: icon;
+	font-size: 4em;
 }
 
-.trend-graph {
-  grid-area: graph;
+.trend__name {
+	grid-area: name;
+	font-size: 1.4em;
+	font-weight: 700;
 }
 
-.current-price-title {
-	grid-area: t_current;
+.trend__current__title {
+	grid-area: c-title;
 }
 
-.current-price-content {
-	grid-area: c_current;
-  color: $support-current-color;
+.trend__current__value {
+	grid-area: c-value;
+	color: $support-current-color;
 }
 
-.next-price-title {
-	grid-area: t_next;
+.trend__next__title {
+	grid-area: n-title;
 }
 
-.next-price-content {
-	grid-area: c_next;
-  color: $primary-color;
+.trend__next__value {
+	grid-area: n-value;
 }
 
-.price-trend-title {
-  color: rgb(130, 130, 130);
-  text-transform: uppercase;
-  font-size: 0.9em;
+.trend__arrow {
+	grid-area: arrow;
+	font-size: 3em;
 }
 
-.trend-text__heavy {
-  font-size: 2em;
-  font-weight: 700;
+.trend__current__title,
+.trend__next__title {
+	margin-top: 0.4em;
+	margin-bottom: 0.6em;
+	text-transform: uppercase;
+	font-size: 0.7em;
+	letter-spacing: 0.2em;
+	color: $primary-text-color;
 }
 
-.product-icon {
-  max-width: 60px;
+.trend__current__value,
+.trend__next__value {
+	font-size: 1.6em;
+	font-weight: 700;
+	text-align: center;
+}
+
+.trend--status--up {
+	color: $primary-color;
+}
+
+.trend--status--stable {
+	color: $support-stable-color;
+}
+
+.trend--status--down {
+	color: $support-down-color;
 }

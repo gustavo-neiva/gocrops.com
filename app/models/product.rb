@@ -70,6 +70,17 @@ class Product < ApplicationRecord
     return (res.mean / 100).round(2).to_f
   end
 
+  # Return a string to set trend--status-- class
+  def set_trend_status
+    product_prices = self.price_informations.map { |o| o.market_price.to_f }
+    product_std = product_prices.standard_deviation
+    if self.forecast_next_month > self.current_month + product_std
+      return "up"
+    elsif self.forecast_next_month < self.current_month - product_std
+      return "down"
+    else
+      return "stable"
+    end
+  end
+
 end
-
-

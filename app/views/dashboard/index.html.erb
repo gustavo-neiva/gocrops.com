@@ -2,27 +2,7 @@
   <h2 class="section-main-title section-title">My Crops Trends</h2>
 	<div class="section-main">
     <% current_user.crops.each do |crop| %>
-      <% product = Product.find(crop.product_id) %>
-  		<div class="trend_card box-component grid-trends">
-  			<div class="trend-product trend-text__heavy">
-            <span class="ic-<%=product.name.split.join.downcase%>"></span>
-          <p><%= product.name.downcase %></p>
-        </div>
-  			<p class="current-price-title price-trend-title">Current Month</p>
-  			<span class="current-price-content trend-text__heavy">€<%= product.current_month %>/kg</span>
-  			<p class="next-price-title price-trend-title">Next Month</p>
-
-
-  			<span class="next-price-content trend-text__heavy">
-          €<%= product.forecast_next_month %>/kg
-        </span>
-
-
-        <div class="trend-arrow trend-text__heavy">
-          <i class="fa fa-arrow-up" aria-hidden="true"></i>
-        </div>
-        <div class="trend-graph graph"><%= line_chart product.historic_data_array('20150101', '20170801') %></div>
-  		</div>
+      <%= render 'trend_card', product: crop.product %>
     <% end %>
 	</div>
   <h2 class="section-sidebar-title section-title">Utilities</h2>
@@ -53,4 +33,10 @@
 	</div>
 </div>
 
-
+<% content_for(:after_js) do %>
+  <script>
+    $('.js-trend').on('click', function(){
+      $(this).children().toggleClass('hidden');
+    });
+  </script>
+<% end %>
