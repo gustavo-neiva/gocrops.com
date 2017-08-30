@@ -9,43 +9,9 @@
 	</div>
   <h2 class="section-sidebar-title section-title">Utilities</h2>
 	<div class="section-sidebar grid__utilities">
-    <div class="utility__card box-component box-section__padding">
-      <p class="utility__title">Sky condition</p>
-      <span class="utility__icon">
-        <i class="wi wi-<%= weather_icon_change %>"></i>
-      </span>
-			<span class="utility__data"><%= main_weather %></span>
-		</div>
-    <div class="utility__card box-component box-section__padding">
-      <p class="utility__title">Sun hours</p>
-      <span class="utility__icon">
-        <i class="wi wi-time-2"></i>
-      </span>
-      <% sunrise_time %>
-      <% sunset_time %>
-			<span class="utility__data"><%= hours_sun %> hrs</span>
-		</div>
-    <div class="utility__card box-component box-section__padding">
-      <p class="utility__title">Wind Speed</p>
-			<span class="utility__icon">
-			  <i class="wi wi-strong-wind"></i>
-			</span>
-			<span class="utility__data"><%= "#{wind_speed.round(2).to_s} m/s" %></span>
-		</div>
-    <div class="utility__card box-component box-section__padding">
-      <p class="utility__title">Temperature</p>
-			<span class="utility__icon">
-        <i class="wi wi-thermometer"></i>
-      </span>
-			<span class="utility__data"><%= temperature.round().to_s %> °C </span>
-		</div>
-    <div class="utility__card box-component box-section__padding">
-      <p class="utility__title">Air Humidity</p>
-      <span class="utility__icon">
-        <i class="wi wi-humidity"></i>
-      </span>
-			<span class="utility__data"><%= humidity.round().to_s %> %</span>
-		</div>
+
+    <%= render 'utilities' %> 
+
 	</div>
 </div>
 
