@@ -1,3 +1,5 @@
+<%= content_for :title, "GoCrops! - #{current_user.farm_name}" %>
+
 <div class="grid-dashboard__profile profile-index">
 	<h2 class="section-main-title section-title">My Info</h2>
 	<%= link_to "Edit Profile", edit_dashboard_profiles_path, class: "section-main-cta section-cta btn-section-cta btn__edit" %>
