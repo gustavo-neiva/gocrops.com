@@ -2,6 +2,7 @@
   <!-- Avatar -->
   <div class="navbar-dashboad-item">
       <%= cl_image_tag current_user.user_avatar, class: "avatar" %>
+      <%= current_user.first_name + " " + current_user.last_name %>
   </div>
 
   <!-- Right Navigation -->
