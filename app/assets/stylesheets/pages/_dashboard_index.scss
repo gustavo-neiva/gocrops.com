@@ -9,11 +9,30 @@
   grid-gap: 15px;
 }
 
+
 .utility__card {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: max-content max-content;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
   color: $primary-color;
+}
+
+.utility__title {
+  grid-column: 1 / -1;
+  justify-self: center;
+	text-transform: uppercase;
+	font-size: 0.7em;
+	letter-spacing: 0.2em;
+  margin-top: 0.6em;
+  margin-bottom: 0.6em;
+	color: $primary-text-color;
+}
+
+.utility__icon {
+  justify-self: center;
+  // align-self: center;
 }
 
 .utility__icon i {
