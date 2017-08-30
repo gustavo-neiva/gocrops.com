@@ -2,10 +2,46 @@
 // Utilities Grid
 // ***********************
 
-.grid-utilities {
+.grid__utilities {
   display: grid;
   grid-template-columns: repeat(2, minmax(200px, 1fr));
+  grid-template-rows: repeat(3, minmax(120px, max-content));
   grid-gap: 15px;
+}
+
+
+.utility__card {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: max-content max-content;
+  align-items: center;
+  justify-content: space-between;
+  color: $primary-color;
+}
+
+.utility__title {
+  grid-column: 1 / -1;
+  justify-self: center;
+	text-transform: uppercase;
+	font-size: 0.7em;
+	letter-spacing: 0.2em;
+  margin-top: 0.6em;
+  margin-bottom: 0.6em;
+	color: $primary-text-color;
+}
+
+.utility__icon {
+  justify-self: center;
+  // align-self: center;
+}
+
+.utility__icon i {
+  font-size: 3em;
+}
+
+.utility__data {
+  font-size: 2.5em;
+  font-weight: 700;
 }
 
 // ***********************

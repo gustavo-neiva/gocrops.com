@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get 'dashboard', to: 'dashboard#index'
   get 'dashboard/profile'
   get 'dashboard/crops'
+  get 'dashboard/graph'
 
   # This route forces user to complete profile after signup
   get 'dashboard/complete', to: 'dashboard#complete', as: 'dashboard_profile_complete'

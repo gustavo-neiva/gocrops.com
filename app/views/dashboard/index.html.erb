@@ -1,3 +1,6 @@
+<%= content_for :title, "GoCrops! - Dashboard" %>
+
+
 <div class="grid-dashboard__index">
   <h2 class="section-main-title section-title">My Crops Trends</h2>
 	<div class="section-main">
@@ -8,30 +11,10 @@
     <% end %>
 	</div>
   <h2 class="section-sidebar-title section-title">Utilities</h2>
-	<div class="section-sidebar grid-utilities">
-    <div class="utility_card box-component box-section__padding">
-			<div class="utility_icon">Sky</div>
-       <span><i class="wi wi-<%= weather_icon_change %>"></i></span>
-			<span><%=  main_weather %></span>
-		</div>
-    <div class="utility_card box-component box-section__padding">
-			<div class="utility_icon">Wind Seed</div>
-			<span><%= "#{wind_speed.round(2).to_s} m/s" %></span>
-		</div>
-    <div class="utility_card box-component box-section__padding">
-			<div class="utility_icon">Temperature</div>
-			<span><%= "#{temperature.round(2).to_s} °C" %></span>
-		</div>
-    <div class="utility_card box-component box-section__padding">
-			<div class="utility_icon">Air humidity</div>
-			<span><%= "#{humidity.round(2).to_s}%" %></span>
-		</div>
-    <div class="utility_card box-component box-section__padding">
-			<div class="utility_icon">Sun Hours</div>
-      <% sunrise_time %>
-      <% sunset_time %>
-			<span><%= hours_sun %></span>
-		</div>
+	<div class="section-sidebar grid__utilities">
+
+    <%= render 'utilities' %> 
+
 	</div>
 </div>
 
