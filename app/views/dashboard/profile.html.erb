@@ -11,7 +11,9 @@
 		<p><%= @user.bio %></p>
 		<h4 class="sub-section-title">Contact</h4>
 		<ul>
-			<li><%= @user.email %></li>
+			<% if @user.email.present? %>
+				<li><%= @user.email %></li>
+			<% end %>
 		    <% if @user.phone.present? %> 
 		    	<li><%= @user.phone %></li>
 		    <% end %>
