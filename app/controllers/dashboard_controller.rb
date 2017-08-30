@@ -26,6 +26,8 @@ class DashboardController < ApplicationController
 
   def graph
     @product = Product.find(params[:product_id])
-    @graph = @product.historic_data_array(params[:start_date], params[:end_date])
+    start_date_parsed = Date.strptime(params[:start_date], "%d/%m/%Y").strftime("%Y/%m/%d")
+    end_date_parsed = Date.strptime(params[:end_date], "%d/%m/%Y").strftime("%Y/%m/%d")
+    @graph = @product.historic_data_array(start_date_parsed, end_date_parsed)
   end
 end
