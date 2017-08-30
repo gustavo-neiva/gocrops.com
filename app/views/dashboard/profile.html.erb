@@ -12,7 +12,9 @@
 		<h4 class="sub-section-title">Contact</h4>
 		<ul>
 			<li><%= @user.email %></li>
-			<li><%= @user.phone %></li>
+		    <% if @user.phone.present? %> 
+		    	<li><%= @user.phone %></li>
+		    <% end %>
 		</ul>
 	</div>
 	<h2 class="section-sidebar-title section-title">Farm</h2>
