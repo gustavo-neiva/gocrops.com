@@ -17,8 +17,10 @@
   </div>
   <div class="trend__graph hidden">
     <%= render "datepicker", product: product %>
-    <% if @start && @end && @product_id == product.id.to_s %>
-      <%= area_chart product.historic_data_array(@start, @end), colors: [product.set_graph_status]  %>
-    <% end %>
+    <div id="product-<%= product.id %>" >
+      <% if @start && @end && @product_id == product.id.to_s %>
+        <%= area_chart product.historic_data_array(@start, @end), id: "chart-#{product.id}", colors: [product.set_graph_status]  %>
+      <% end %>
+    </div>
   </div>
 </div>

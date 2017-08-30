@@ -1,0 +1,1 @@
+$("#product-<%= @product.id %>").html('<%= j area_chart(@graph, id: "chart-#{@product.id}", colors: [@product.set_graph_status]) %>')

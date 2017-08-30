@@ -23,4 +23,9 @@ class DashboardController < ApplicationController
     @user = current_user
     @user_coordinates = { lat: @user.latitude, lng: @user.longitude }
   end
+
+  def graph
+    @product = Product.find(params[:product_id])
+    @graph = @product.historic_data_array(params[:start_date], params[:end_date])
+  end
 end
