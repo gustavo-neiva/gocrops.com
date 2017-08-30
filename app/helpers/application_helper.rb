@@ -51,7 +51,7 @@ module ApplicationHelper
     @sunset = Time.at( weather_object["sys"]["sunset"])
   end
   def hours_sun
-    @hours_sun = ((@sunset - @sunrise)/3600).round(2)
+    @hours_sun = ((@sunset - @sunrise)/3600).round()
   end
 end
 

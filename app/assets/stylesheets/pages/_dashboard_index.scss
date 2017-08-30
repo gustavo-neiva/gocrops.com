@@ -2,10 +2,27 @@
 // Utilities Grid
 // ***********************
 
-.grid-utilities {
+.grid__utilities {
   display: grid;
   grid-template-columns: repeat(2, minmax(200px, 1fr));
+  grid-template-rows: repeat(3, minmax(120px, max-content));
   grid-gap: 15px;
+}
+
+.utility__card {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  color: $primary-color;
+}
+
+.utility__icon i {
+  font-size: 3em;
+}
+
+.utility__data {
+  font-size: 2.5em;
+  font-weight: 700;
 }
 
 // ***********************
