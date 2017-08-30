@@ -16,7 +16,16 @@
         <p><%= @crop.harvests.sum(:quantity) %> kgs</p>
       </div>
       <h3> Harvests </h3>
-      <%= render "harvest_form" %>
+        <table>
+          <% @crop.harvests.each do |harvest| %>
+          <td><%= harvest.date %></td>
+          <tr><%= harvest.quantity %></tr> 
+          <% end %>
+        </table>
+      <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#newCocktailModal">
+       Add Harvest
+      </button>
+      <%= render "modal" %>
     </div>
   </div>
 </div>

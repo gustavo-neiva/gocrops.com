@@ -2,14 +2,11 @@
   <div class="box-component box-section__padding">
     <div id="harvests">
       <%= f.simple_fields_for :harvests do |harvest| %>
-        <%= render 'harvest_fields', f: harvest %>
+        <%#= render 'harvest_fields', f: harvest %>
       <% end %>
-
       <div class="links">
         <%= link_to_add_association 'Add harvest', f, :harvests, class: "btn btn-primary" %>
       </div>
-
-
     </div>
   </div>
   <%= f.submit %>
