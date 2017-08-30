@@ -1,5 +1,7 @@
 <div class="row justify-content-left">
-  <div class="col-sm-8">
+  <div class="col-sm-4">
+    <div class="utility_card box-component box-section__padding">
+    <div class="table table-striped table-responsive section-main">
     <table>
       <thead>
         <th>Product</th>
@@ -12,12 +14,20 @@
           <td><%= @crop.production %></td>
           <td><%= @crop.transport ? 'Yes' : 'No'  %></td>
           <td><%= @crop.description %></td>
-          <td><%= link_to "Edit", edit_dashboard_crop_path(@crop) %></td>
-          <td><%= link_to "Return", dashboard_crops_path%></td>
       </tr>
     </table>
+    <p><%= link_to "Edit", edit_dashboard_crop_path(@crop), class: "btn btn-primary" %></p>
+    <p><%= link_to "Return", dashboard_crops_path, class: "btn btn-primary"%></p>
+    </div>
+   </div>
   </div>
   <div class="col-sm-4">
     <%= render "harvest_form" %>
+  </div>
+  <div class="col-sm-4">
+    <h3>Inventory</h3>
+    <div class="utility_card box-component box-section__padding">
+    <p><%= @crop.harvests.sum(:quantity) %> kgs</p>
+  </div>
   </div>
 </div>
