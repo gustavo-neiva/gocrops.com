@@ -11,8 +11,12 @@
 		<p><%= @user.bio %></p>
 		<h4 class="sub-section-title">Contact</h4>
 		<ul>
-			<li><%= @user.email %></li>
-			<li><%= @user.phone %></li>
+			<% if @user.email.present? %>
+				<li><%= @user.email %></li>
+			<% end %>
+		    <% if @user.phone.present? %> 
+		    	<li><%= @user.phone %></li>
+		    <% end %>
 		</ul>
 	</div>
 	<h2 class="section-sidebar-title section-title">Farm</h2>
