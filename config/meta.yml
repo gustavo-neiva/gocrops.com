@@ -1,0 +1,7 @@
+# config/meta.yml
+
+meta_product_name: "GoCrops!"
+meta_title: "GoCrops! - Connecting agriculture through knowledge"
+meta_description: "GoCrops empowers you to keep track of your products and make better decisions"
+meta_image: "bg/header-bg.jpg"                       # should exist in `app/assets/images/`
+# twitter_account: "@product_twitter_account"   # required for Twitter Cards
