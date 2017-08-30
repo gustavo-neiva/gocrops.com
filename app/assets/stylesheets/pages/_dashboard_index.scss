@@ -2,10 +2,46 @@
 // Utilities Grid
 // ***********************
 
-.grid-utilities {
+.grid__utilities {
   display: grid;
   grid-template-columns: repeat(2, minmax(200px, 1fr));
+  grid-template-rows: repeat(3, minmax(120px, max-content));
   grid-gap: 15px;
+}
+
+
+.utility__card {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: max-content max-content;
+  align-items: center;
+  justify-content: space-between;
+  color: $primary-color;
+}
+
+.utility__title {
+  grid-column: 1 / -1;
+  justify-self: center;
+	text-transform: uppercase;
+	font-size: 0.7em;
+	letter-spacing: 0.2em;
+  margin-top: 0.6em;
+  margin-bottom: 0.6em;
+	color: $primary-text-color;
+}
+
+.utility__icon {
+  justify-self: center;
+  // align-self: center;
+}
+
+.utility__icon i {
+  font-size: 3em;
+}
+
+.utility__data {
+  font-size: 2.5em;
+  font-weight: 700;
 }
 
 // ***********************
@@ -60,6 +96,10 @@
 	grid-area: arrow;
 }
 
+.trend__graph__canvas {
+  padding: 1em;
+}
+
 .trend__current__title,
 .trend__next__title {
 	margin-top: 0.4em;
@@ -87,4 +127,59 @@
 
 .trend--status--down {
 	color: $support-down-color;
+}
+
+// ***********************
+// TREND GRAPH
+// ***********************
+
+.graph__date__form {
+  display: flex;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.graph__date__input {
+  position: relative;
+  margin: 0 15px;
+}
+
+.graph__date__input input {
+  border: none;
+  appearance: none;
+  outline: none;
+  box-shadow: 0px 2px 0px 0px lighten($primary-color, 10%);
+}
+
+.graph__date__input input:focus {
+  box-shadow: 0px 2px 0px 0px $primary-color;
+}
+
+.graph__date__submit {
+  border: 0;
+  border-radius: 30px;
+  padding: 0.1em 0.8em;
+  color: $background-super-light;
+  background-color: $primary-color;
+}
+
+.graph__date__submit:hover {
+  background-color: darken($primary-color, 20%);
+}
+
+.graph__blankstate {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // padding: 1em;
+}
+
+.graph__blankstate p {
+  border-radius: 5px;
+  background-color: $background-tb-header;
+  color: rgba(119, 119, 119, 0.7);
+  padding: 4em 0;
+  margin: 0;
+  width: 100%;
+  text-align: center;
 }
