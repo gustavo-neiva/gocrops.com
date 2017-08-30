@@ -1,30 +1,19 @@
-<p>Pick your dates</p>
-
 <%= form_tag dashboard_graph_path, method: :get, remote:true do %>
-<%= hidden_field_tag :product_id, product.id %>
-  <div style="position: relative">
-    <%= text_field_tag :start_date, "", id: "datetimepicker-#{product.id}-1" %>
+  <%= hidden_field_tag :product_id, product.id %>
+  <div class="graph__date__form">
+    <div class="graph__date__input">
+      <%= text_field_tag :start_date, "", placeholder: "Start date", id: "datetimepicker-#{product.id}-1" %>
+    </div>
+    <div class="graph__date__input">
+      <%= text_field_tag :end_date, "", placeholder: "End date" , id: "datetimepicker-#{product.id}-2"  %>
+    </div>
+    <%= submit_tag :submit, class: "graph__date__submit" %>
   </div>
-  <div style="position: relative">
-    <%= text_field_tag :end_date, "", id: "datetimepicker-#{product.id}-2"  %>
-  </div>
-  <%= submit_tag :submit, id: "display" %>
 <% end %>
 
 <% content_for(:after_js) do %>
   <script type="text/javascript">
-    $('#datetimepicker-<%= product.id %>-1').datetimepicker( {format: "YYYY/MM/DD" } );
-    $('#datetimepicker-<%= product.id %>-2').datetimepicker( {format: "YYYY/MM/DD" } );
+    $('#datetimepicker-<%= product.id %>-1').datetimepicker( {format: "DD/MM/YYYY" } );
+    $('#datetimepicker-<%= product.id %>-2').datetimepicker( {format: "DD/MM/YYYY" } );
   </script>
 <% end %>
-
-<script type="text/javascript">
-  function displayGraph(){
-    $.ajax({
-      type: "GET",
-      url:
-      success:
-      error:
-    })
-  }
-</script>

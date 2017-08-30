@@ -96,6 +96,10 @@
 	grid-area: arrow;
 }
 
+.trend__graph__canvas {
+  padding: 1em;
+}
+
 .trend__current__title,
 .trend__next__title {
 	margin-top: 0.4em;
@@ -123,4 +127,59 @@
 
 .trend--status--down {
 	color: $support-down-color;
+}
+
+// ***********************
+// TREND GRAPH
+// ***********************
+
+.graph__date__form {
+  display: flex;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.graph__date__input {
+  position: relative;
+  margin: 0 15px;
+}
+
+.graph__date__input input {
+  border: none;
+  appearance: none;
+  outline: none;
+  box-shadow: 0px 2px 0px 0px lighten($primary-color, 10%);
+}
+
+.graph__date__input input:focus {
+  box-shadow: 0px 2px 0px 0px $primary-color;
+}
+
+.graph__date__submit {
+  border: 0;
+  border-radius: 30px;
+  padding: 0.1em 0.8em;
+  color: $background-super-light;
+  background-color: $primary-color;
+}
+
+.graph__date__submit:hover {
+  background-color: darken($primary-color, 20%);
+}
+
+.graph__blankstate {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // padding: 1em;
+}
+
+.graph__blankstate p {
+  border-radius: 5px;
+  background-color: $background-tb-header;
+  color: rgba(119, 119, 119, 0.7);
+  padding: 4em 0;
+  margin: 0;
+  width: 100%;
+  text-align: center;
 }
