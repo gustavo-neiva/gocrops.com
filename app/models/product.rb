@@ -64,10 +64,10 @@ class Product < ApplicationRecord
   # Return graph color based on trend status
   def set_graph_status
     product_prices = self.price_informations.map { |o| o.market_price.to_f }
-    product_std = product_prices.standard_deviation
-    if self.forecast_next_month > self.current_month + product_std
+    product_std = product_prices.standard_deviation / 100
+    if self.forecast_next_month > self.current_month + product_std * 0.5
       return "#5BE443"
-    elsif self.forecast_next_month < self.current_month - product_std
+    elsif self.forecast_next_month < self.current_month - product_std * 0.5
       return "#DD4011"
     else
       return "#EDD520"
