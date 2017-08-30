@@ -1,6 +1,5 @@
 class Harvest < ApplicationRecord
-  belongs_to :crop
-
+  belongs_to :crop, dependent: :destroy
   validates :quantity, presence: true, numericality: {greater_than: 0}
   validates :date, presence: true
   before_update :update_crop_production!, if: :quantity_changed?

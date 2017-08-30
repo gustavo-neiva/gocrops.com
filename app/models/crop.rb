@@ -1,7 +1,7 @@
 class Crop < ApplicationRecord
   belongs_to :product
   belongs_to :user
-  has_many :harvests
+  has_many :harvests, dependent: :destroy
 
   validates :user_id, uniqueness: { scope: :product_id }
   validates :production, presence: :true
