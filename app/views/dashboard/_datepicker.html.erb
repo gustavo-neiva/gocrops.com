@@ -1,6 +1,6 @@
 <p>Pick your dates</p>
 
-<%= form_tag dashboard_path, method: :get do %>
+<%= form_tag dashboard_graph_path, method: :get, remote:true do %>
 <%= hidden_field_tag :product_id, product.id %>
   <div>
     <%= text_field_tag :start_date, "", id: "datetimepicker-#{product.id}-1" %>
@@ -8,7 +8,7 @@
   <div>
     <%= text_field_tag :end_date, "", id: "datetimepicker-#{product.id}-2"  %>
   </div>
-  <%= submit_tag :submit %>
+  <%= submit_tag :submit, id: "display" %>
 <% end %>
 
 <% content_for(:after_js) do %>
@@ -17,3 +17,23 @@
     $('#datetimepicker-<%= product.id %>-2').datetimepicker( {format: "YYYY/MM/DD" } );
   </script>
 <% end %>
+
+<script type="text/javascript">
+  function displayGraph(){
+    $.ajax({
+      type: "GET",
+      url:
+      success:
+      error:
+    })
+  }
+</script>
+
+<!--<script>
+  $(document).ready(function() {
+    $('#display').click(function(e) {
+      e.preventDefault();
+      displayGraph();
+    });
+  });
+</script>-->
