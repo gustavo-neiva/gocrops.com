@@ -2,10 +2,10 @@
 
 <%= form_tag dashboard_graph_path, method: :get, remote:true do %>
 <%= hidden_field_tag :product_id, product.id %>
-  <div>
+  <div style="position: relative">
     <%= text_field_tag :start_date, "", id: "datetimepicker-#{product.id}-1" %>
   </div>
-  <div>
+  <div style="position: relative">
     <%= text_field_tag :end_date, "", id: "datetimepicker-#{product.id}-2"  %>
   </div>
   <%= submit_tag :submit, id: "display" %>
