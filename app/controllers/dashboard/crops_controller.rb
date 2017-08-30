@@ -53,6 +53,6 @@ class Dashboard::CropsController < ApplicationController
     end
 
     def crop_params
-      params.require(:crop).permit(:harvest_date, :production, :transport, :product_id, :pictures, :description)
+      params.require(:crop).permit(:harvest_date, :production, :transport, :product_id, :pictures, :description, harvests_attributes: [:id, :date, :quantity, :_destroy])
     end
   end

@@ -5,7 +5,7 @@ class Product < ApplicationRecord
   has_many :crops
   has_many :price_informations
 
-  validates :name, presence: true, uniqueness: true
+  validates :name, presence: true
   validates :category, presence: true, uniqueness: { scope: :name}
 
   def historic_data_array(start_period, end_period)

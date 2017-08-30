@@ -7,6 +7,7 @@ class Crop < ApplicationRecord
   validates :production, presence: :true
   validates :description, presence: :true
   validate :validate_date_in_present
+  accepts_nested_attributes_for :harvests, reject_if: :all_blank, allow_destroy: true
 
   mount_uploader :pictures, PictureUploader
 

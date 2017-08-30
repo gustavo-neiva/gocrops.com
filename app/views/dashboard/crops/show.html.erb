@@ -1,19 +1,22 @@
-<table>
-  <thead>
-    <th>Product</th>
-    <th>Harvest Date</th>
-    <th>Quantity</th>
-    <th>Can Transport?</th>
-    <th>Description</th>
-  </thead>
-  <tr>
-      <td><%= @crop.product.name %></td>
-      <td><%= l @crop.harvest_date, format: :long %></td>
-      <td><%= @crop.production %></td>
-      <td><%= @crop.transport ? 'Yes' : 'No'  %></td>
-      <td><%= @crop.description %></td>
-      <td><%= link_to "Edit", edit_dashboard_crop_path(@crop) %></td>
-      <td><%= link_to "Return", dashboard_crops_path%></td>
-
-  </tr>
-</table>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-sm-6">
+      <div class="box-component box-section__padding">
+          <h2><%= @crop.product.name %></h2>
+          <p>Transport: <%= @crop.transport ? 'Yes' : 'No'  %></p>
+          <h3>Description:</h3>
+          <p><%= @crop.description %></p>
+          <p><%= link_to "Edit", edit_dashboard_crop_path(@crop), class: "btn btn-primary" %></p>
+          <p><%= link_to "Return", dashboard_crops_path, class: "btn btn-primary"%></p>
+     </div>
+    </div>
+    <div class="col-sm-4">
+      <h3>Inventory</h3>
+      <div class="utility_card box-component box-section__padding">
+        <p><%= @crop.harvests.sum(:quantity) %> kgs</p>
+      </div>
+      <h3> Harvests </h3>
+      <%= render "harvest_form" %>
+    </div>
+  </div>
+</div>

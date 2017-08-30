@@ -6,16 +6,16 @@
   <table class="table table-striped table-responsive section-main">
     <thead class="thead-default">
       <th>Product</th>
-      <th>Harvest Date</th>
-      <th>Quantity</th>
+      <th>Description</th>
+      <th>Transport</th>
       <th></th>
     </thead>
     <tbody>
       <% @crops.each do |c|  %>
       <tr>
           <td><%= c.product.name %></td>
-          <td><%= l c.harvest_date, format: :long %></td>
-          <td><%= c.production %></td>
+          <td><%= c.description %></td>
+          <td><%= c.transport ? "Yes" : "No" %></td>
           <td class="text-right">
             <%= link_to "Open", dashboard_crop_path(c), class: "btn btn-success" %>
             <%= link_to "Edit", edit_dashboard_crop_path(c), class: "btn btn-primary" %>

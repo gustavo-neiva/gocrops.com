@@ -8,6 +8,7 @@
 //= require chartkick
 //= require moment
 //= require bootstrap-datetimepicker
+//= require cocoon
 
 // We can't use require with ActiveAdmin
 // require_tree .
