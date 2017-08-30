@@ -18,6 +18,7 @@ gem "geocoder"
 gem "coffee-rails"
 gem "gmaps4rails"
 gem "faker"
+gem "cocoon"
 
 source 'https://rails-assets.org' do
   gem "rails-assets-underscore"

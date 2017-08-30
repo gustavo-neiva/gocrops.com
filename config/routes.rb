@@ -20,5 +20,13 @@ Rails.application.routes.draw do
   namespace :dashboard do
     resources :crops, except: :index
   end
+
+  namespace :dashboard do
+    resources :harvests, only: :edit
+  end
+
+  namespace :dashboard do
+    resources :sells, only: :edit
+  end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
