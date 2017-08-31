@@ -1,40 +1,22 @@
-<div class="registration_container">
+<div class="container">
+  <div class="row justify-content-center registration__container">
+    <div class="col-md-4">
+      <h2 class="text-center">Welcome back!</h2>
 
-  <br>
+      <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <div class="form-inputs">
+          <%= f.input :email, required: false, autofocus: true %>
+          <%= f.input :password, required: false %>
+          <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+        </div>
 
-  <h2 class="text-center signup">Welcome back!</h2>
-
-  <%- if devise_mapping.omniauthable? %>
-    <%- resource_class.omniauth_providers.each do |provider| %>
-      <%= link_to omniauth_authorize_path(resource_name, provider) do %>
-        <%= image_tag "fb-btn.png", class: "fb-btn" %>
+        <div class="form-actions">
+          <%= f.button :submit, "Log in", class: "btn btn-primary-color btn-block" %>
+        </div>
       <% end %>
-      <br />
-    <% end -%>
-  <% end -%>
 
-  <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-    <div class="form-inputs">
-      <%= f.input :email, required: false, autofocus: true %>
-      <%= f.input :password, required: false %>
-      <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+      <%= render "devise/shared/links" %>
+
     </div>
-
-    <div class="form-actions">
-      <%= f.button :submit, "Log in", class: "btn-block" %>
-    </div>
-  <% end %>
-
-  <%- if controller_name != 'sessions' %>
-    <%= link_to "Log in", new_session_path(resource_name) %><br />
-  <% end -%>
-
-  <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
-    <%= link_to "Forgot your password?", new_password_path(resource_name) %><br />
-  <% end -%>
-
-  <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
-    <%= link_to "Sign up", new_registration_path(resource_name) %><br />
-  <% end -%>
-  
+  </div>
 </div>

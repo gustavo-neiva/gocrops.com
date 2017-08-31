@@ -1,18 +1,7 @@
-.signup {
-	color: #5BE443;
-	text-align: center;
-}
+.registration__container {
+	margin-top: 30px;
 
-.facebook_button {
-	text-align: center;
-}
-
-.fb-btn {
-	text-align: center;
-	width: 220px
-}
-
-.registration_container {
-	width: 50%;
-	margin: 0 auto;
+	h2 {
+		color: $primary-color;
+	}
 }

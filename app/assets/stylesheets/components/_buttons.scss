@@ -1,3 +1,25 @@
+.btn-primary-color {
+  color: $background-super-light;
+  background-color: $primary-color;
+}
+
+.btn-primary-color:hover {
+  text-decoration: none;
+  color: $background-super-light;
+  background-color: darken($primary-color, 20%)
+}
+
+.btn-facebook-color {
+  background-color: #3b5998;
+  color: #f7f7f7;
+}
+
+.btn-facebook-color:hover {
+  text-decoration: none;
+  color: #f7f7f7;
+  background-color: #8b9dc3;
+}
+
 .btn-primary-cta {
   color: $background-super-light;
   background-color: $primary-color;
@@ -7,17 +29,16 @@
   font-size: 1em;
   transition: background-color 0.4s ease;
 }
+
 .btn-primary-cta:hover {
   text-decoration: none;
   color: $background-super-light;
   background-color: darken($primary-color, 20%)
 }
 
+
+
 .btn-big {
   padding: 25px 60px;
   font-size: 2em;
-}
-
-.btn-block {
-  background-color: #5BE443;
 }
