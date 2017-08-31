@@ -1,25 +1,52 @@
-// USER PROFILE STYLES
+// **********************
+// GENERAL PROFILE STYLES
+// **********************
 
-.box-section {
+.responsive-image {
+	width: 100%;
+}
+
+.box__section--margin--b{
 	margin-bottom: 15px;
 }
 
-.profile-index {
-	h3, h4, p, dt, dd {
-		color: darken($primary-text-color, 10%);
-	}
+// ********************
+// USER SECTION @ PROFILE
+// ********************
+
+.user__section {
+	display: grid;
+	grid-template-columns: 2fr 3fr;
+	grid-auto-rows: min-content;
+	grid-gap: 1em;
+	padding: 1em;
+	align-self: flex-start;
 }
 
-.user-profile-picture {
+.user__section__picture {
+	grid-column: 1 / 2;
+	grid-row: 1 / span 6;
+	width: 100%;
 	border-radius: 5px;
-	margin-top: 10px;
 }
 
-@media (min-width: 500px) {
-  .user-profile-picture {
-    max-width: 40%;
-  }
+.user__section__contact {
+	list-style: none;
+	padding-left: 0;
 }
+
+.user__section__subtitle {
+	margin-bottom: 0;
+}
+
+.user__section__contact p {
+	margin-left: 1em;
+	border-bottom: 1px solid $secondary-text-color;
+}
+
+// ********************
+// USER FARM SECTION
+// ********************
 
 .farm-profile-picture {
 	height: auto;
@@ -28,4 +55,13 @@
 
 .aside dl {
 	display: inline-block;
+}
+
+
+// CHANGE NAME OF THIS TAG TO REFLECT CONTENT
+.sub-section-title__tag {
+	text-transform: uppercase;
+	letter-spacing: 3px;
+	color: $secondary-text-color !important;
+	font-size: 0.9em;
 }

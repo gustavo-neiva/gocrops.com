@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-sm-6">
-      <div class="box-component box-section__padding">
+      <div class="box-component box__section--padding">
           <h2><%= @crop.product.name %></h2>
           <p>Transport: <%= @crop.transport ? 'Yes' : 'No'  %></p>
           <h3>Description:</h3>
@@ -12,7 +12,7 @@
     </div>
     <div class="col-sm-4">
       <h3>Inventory</h3>
-      <div class="utility_card box-component box-section__padding">
+      <div class="utility_card box-component box__section--padding">
         <p><%= @crop.harvests.sum(:quantity) %> kgs</p>
       </div>
       <h3> Harvests </h3>

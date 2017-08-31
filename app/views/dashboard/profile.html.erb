@@ -1,35 +1,47 @@
 <%= content_for :title, "GoCrops! - #{current_user.farm_name}" %>
 
-<div class="grid-dashboard__profile profile-index">
+<div class="grid-dashboard__profile">
+
 	<h2 class="section-main-title section-title">My Info</h2>
 	<%= link_to "Edit Profile", edit_dashboard_profiles_path, class: "section-main-cta section-cta btn-section-cta btn__edit" %>
-
-	<div class="section-main box-component box-section box-section__padding">
-    <%= cl_image_tag @user.user_avatar, class: "responsive-image user-profile-picture" %>
-    <h3 class="sub-section-main-header"><%= "#{@user.first_name} #{@user.last_name}" %></h3>
-		<h4 class="sub-section-title">Bio</h4>
-		<p><%= @user.bio %></p>
-		<h4 class="sub-section-title">Contact</h4>
-		<ul>
+	<!-- PROFILE SECTION -->
+	<div class="section-main user__section box-component">
+    <%= cl_image_tag @user.user_avatar, class: "user__section__picture" %>
+    <h3 class="user__section__title"><%= "#{@user.first_name.capitalize} #{@user.last_name.capitalize}" %></h3>
+		<h4 class="user__section__subtitle">Bio</h4>
+		<p 	class="user__section__description"><%= @user.bio %></p>
+		<h4 class="user__section__subtitle">Contact</h4>
+		<ul class="user__section__contact">
 			<% if @user.email.present? %>
-				<li><%= @user.email %></li>
+				<li>
+					<p>
+						<i class="fa fa-envelope" aria-hidden="true"></i>
+						<%= @user.email %>
+					</p>
+				</li>
 			<% end %>
-		    <% if @user.phone.present? %> 
-		    	<li><%= @user.phone %></li>
+		    <% if @user.phone.present? %>
+		    <li>
+					<p>
+						<i class="fa fa-phone" aria-hidden="true"></i>
+						<%= @user.phone %>
+					</p>
+				</li>
 		    <% end %>
 		</ul>
 	</div>
+
 	<h2 class="section-sidebar-title section-title">Farm</h2>
-	<div class="section-sidebar box-component box-section">
-		<!-- <img src="https://unsplash.it/600/400?image=915" alt="Farm name" class="responsive-image farm-profile-picture"> -->
+	<!-- FARM SECTION -->
+	<div class="section-sidebar farm__section box-component">
     <%= cl_image_tag @user.farm_picture, class: "responsive-image farm-profile-picture" %>
-		<div class="sub-section-farm-info box-section__padding">
+		<div class="sub-section-farm-info box__section--padding">
 			<h3 class="sub-section-header"><%= @user.farm_name %></h3>
 			<h4 class="sub-section-title">Address</h4>
 			<div id="map" style="width: 100%; height: 300px;"></div>
 		</div>
 	</div>
-	<div class="aside box-component box-section box-section__padding">
+	<div class="aside box-component box__section--margin--b box__section--padding">
 		<h4 class="sub-section-title__tag">Certificate</h4>
 		<dl>
 			<dt class="sub-section-title">Issue date</dt>
