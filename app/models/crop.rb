@@ -4,16 +4,10 @@ class Crop < ApplicationRecord
   has_many :harvests, dependent: :destroy
 
   validates :user_id, uniqueness: { scope: :product_id }
-  validates :production, presence: :true
   validates :description, presence: :true
-  validate :validate_date_in_present
+
   accepts_nested_attributes_for :harvests, reject_if: :all_blank, allow_destroy: true
 
   mount_uploader :pictures, PictureUploader
 
-  def validate_date_in_present
-    if harvest_date.present? && harvest_date < Date.today
-      errors.add(:harvest_date, "Please choose a harvest date that is in the present!")
-    end
-  end
 end
