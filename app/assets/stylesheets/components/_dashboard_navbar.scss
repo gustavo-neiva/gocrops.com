@@ -3,10 +3,13 @@
   background: $primary-color;
   transition: all 0.3s ease;
   height: 70px;
-  padding: 0 2em;
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+.navbar__user__info {
+  display: none;
 }
 
 /* Logo */
@@ -66,4 +69,16 @@
   color: white;
   font-weight: 700;
   font-size: 1.6em;
+}
+
+@media (min-width: 500px) {
+  .navbar__dashboard {
+    padding: 0 2em;
+  }
+}
+
+@media (min-width: 730px) {
+  .navbar__user__info:first-child {
+    display: block;
+  }
 }
