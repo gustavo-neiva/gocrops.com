@@ -2,6 +2,7 @@
 <html>
   <head>
     <title><%= content_for?(:title) ? yield(:title) : "Go Crops!" %></title>
+    <%= favicon_link_tag %>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= csrf_meta_tags %>
