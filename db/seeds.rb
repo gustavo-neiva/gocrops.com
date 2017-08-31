@@ -60,11 +60,11 @@ round = 0
     description: Faker::Lorem.paragraph
   )
   crop.save!
-  (1..5).sample.times do
+  (1..5).to_a.sample.times do
     harvest = Harvest.new(
       crop: crop,
       quantity: (1..9999).to_a.sample,
-      harvest_date: rand(Date.civil(2017, 8, 28)..Date.civil(2020, 12, 31))
+      date: rand(Date.civil(2017, 8, 28)..Date.civil(2020, 12, 31))
     )
     harvest.save!
   end
