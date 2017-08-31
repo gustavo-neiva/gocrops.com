@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="row justify-content-center">
+  <div class="row justify-content-center mt-30">
     <div class="col-md-8">
       <nav class="nav nav-tabs" id="myTab" role="tablist">
         <a class="nav-item nav-link active" id="nav-my-info-tab" data-toggle="tab" href="#nav-my-info" role="tab" aria-controls="nav-my-info" aria-expanded="true">My info</a>
@@ -26,9 +26,11 @@
               <%= f.input :farm_picture_cache, as: :hidden %>
               <%= f.input :farm_size %>
               <%= f.input :farm_certification %>
+              <%= f.input :certificate_issue_date %>
+              <%= f.input :certificate_expiration_date %>
             </div>
             <div class="form-actions">
-              <%= f.button :submit, "Save" %>
+              <%= f.button :submit, "Save", class: "btn btn-success" %>
             </div>
           </div>
         <% end %>
