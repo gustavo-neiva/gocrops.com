@@ -1,6 +1,5 @@
-<%= simple_form_for @crop, url: dashboard_crops_path do |f| %>
+<%= simple_form_for @crop, url: dashboard_crop_path do |f| %>
   <%= f.association :product, collection: Product.where.not(id: current_user.crops.pluck(:product_id)) %>
-  <%= f.input :production %>
   <%= f.input :transport, as: :boolean %>
   <%= f.input :description, as: :text %>
   <%= f.submit  %>
