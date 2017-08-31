@@ -1,6 +1,19 @@
-<div class="container">
+<div class="registration_container">
 
-  <h2>Sign up</h2>
+  <br>
+
+  <h2 class="signup">Sign up!</h2>
+
+  <%- if devise_mapping.omniauthable? %>
+    <%- resource_class.omniauth_providers.each do |provider| %>
+      <%= link_to omniauth_authorize_path(resource_name, provider) do %>
+        <%= image_tag "fb-btn.png", class: "fb-btn" %>
+      <% end %>
+      <br />
+    <% end -%>
+  <% end -%>
+
+  <br>
 
   <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
     <%= f.error_notification %>
@@ -15,7 +28,5 @@
       <%= f.button :submit, "Sign up" %>
     </div>
   <% end %>
-
-  <%= render "devise/shared/links" %>
 
 </div>
