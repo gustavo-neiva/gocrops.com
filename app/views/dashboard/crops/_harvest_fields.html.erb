@@ -1,5 +1,10 @@
 <div class="nested-fields">
-  <%= f.input :date %>
-  <%= f.input :quantity %>
-  <%= link_to_remove_association "Remove harvest", f, class: "btn btn-danger"%>
+  <div class="harvest__modal--add">
+    <%= f.input :date %>
+    <%= f.input :quantity, wrapper_html: { class: 'harvest__modal__quantity' } %>
+    <%= link_to_remove_association f, class: "btn btn-danger btn-small" do %>
+      <i class="fa fa-times" aria-hidden="true"></i>
+    <% end %>
+  </div>
+  <hr>
 </div >

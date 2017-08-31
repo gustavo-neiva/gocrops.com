@@ -1,0 +1,5 @@
+<%= simple_form_for @crop, url: dashboard_crop_path(@crop) do |f| %>
+  <%= f.input :description, as: :text %>
+  <%= f.input :transport, as: :boolean %>
+  <%= f.button :submit, "Update Crop", class: "btn btn-success" %>
+<% end %>

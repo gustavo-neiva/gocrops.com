@@ -1,37 +1,55 @@
-<div class="container">
+<div class="container crop__container">
   <div class="row justify-content-center">
     <div class="col-sm-6">
-      <div class="box__component box__section--padding">
-          <h2><%= @crop.product.name %></h2>
-          <p>Transport: <%= @crop.transport ? 'Yes' : 'No'  %></p>
-          <h3>Description:</h3>
+      <div class="crop__details">
+          <h1><%= @crop.product.name %></h1>
+          <h4>Description:</h4>
           <p><%= @crop.description %></p>
-          <p><%= link_to "Edit", edit_dashboard_crop_path(@crop), class: "btn btn-primary" %></p>
-          <p><%= link_to "Return", dashboard_crops_path, class: "btn btn-primary"%></p>
+          <h4>Transport:</h4>
+          <p> <%= @crop.transport ? 'Yes' : 'No'  %></p>
+          <div class="crop__datails__control">
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#newCropModal">
+              Edit
+            </button>
+            <%= render 'edit_crop_modal' %>
+            <span><%= link_to "Delete", dashboard_crop_path(@crop), method: :delete, class: "btn btn-danger"%></span>
+          </div>
      </div>
     </div>
     <div class="col-sm-4">
-      <h3>Inventory</h3>
-      <div class="utility_card box-component box-section__padding">
+      <h2>Inventory</h2>
+      <div class="crop__inventory">
         <p id="inventory"><%= @crop.harvests.sum(:quantity) %> kgs</p>
       </div>
-        <table>
-          <tr>
-            <th> Dates</th>
-            <th> Quantity</th>
-          </tr>
-          <% @crop.harvests.each do |harvest| %>
-          <tr id="harvest_<%=harvest.id.to_s%>">
-            <td><%= harvest.date.strftime("%d/%m/%y") %></td>
-            <td><%= harvest.quantity %> kgs </td>
-            <td><%= link_to "Remove", dashboard_harvest_path(harvest), method: :delete, remote: true, class: "btn btn-danger" %></td>
-          </tr>
-          <% end %>
+      <h2>Harvest Schedule</h2>
+      <div class="crop__harvest">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th> Dates </th>
+              <th> Quantity </th>
+              <th> Delete </th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @crop.harvests.each do |harvest| %>
+            <tr id="harvest_<%=harvest.id.to_s%>">
+              <td><%= harvest.date.strftime("%d/%m/%y") %></td>
+              <td><%= harvest.quantity %> kgs </td>
+              <td>
+                <%= link_to dashboard_harvest_path(harvest), method: :delete, remote: true, class: "btn btn-danger btn-sm btn-block" do %>
+                <i class="fa fa-times" aria-hidden="true"></i>
+                <% end %>
+              </td>
+            </tr>
+            <% end %>
+          </tbody>
         </table>
-      <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#newCocktailModal">
-       Add Harvest
-      </button>
-      <%= render "modal" %>
+        <button type="button" class="btn btn-primary btn-block text-uppercase" data-toggle="modal" data-target="#newHarvestModal">
+          Add New Harvest
+        </button>
+        <%= render "harvest_modal" %>
+      </div>
     </div>
   </div>
 </div>
