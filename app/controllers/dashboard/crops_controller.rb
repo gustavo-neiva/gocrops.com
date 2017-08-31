@@ -9,17 +9,15 @@ class Dashboard::CropsController < ApplicationController
     #   @crops_class = "navbar__dashboard__link--active"
     # end
 
-    def new
-      @crop = Crop.new
-      @products = Product.all
-    end
 
     def create
       @crop = current_user.crops.build(crop_params)
       if @crop.save
+        flash[:notice] = "Crop successfully created"
         redirect_to dashboard_crops_path
       else
-        render :new
+        flash[:alert] = "Please try again and fill all required fields!"
+        redirect_to dashboard_crops_path
       end
     end
 
@@ -28,9 +26,12 @@ class Dashboard::CropsController < ApplicationController
 
     def update
       if @crop.update(crop_params)
-        redirect_to dashboard_crops_path
+        flash[:notice] = "Crop successfully updated!"
+        redirect_to dashboard_crop_path(@crop)
       else
-        render :new
+        flash[:alert] = "Please try again and fill all required fields!"
+        p @crop.errors
+        redirect_to dashboard_crop_path(@crop)
       end
     end
 
@@ -53,6 +54,6 @@ class Dashboard::CropsController < ApplicationController
     end
 
     def crop_params
-      params.require(:crop).permit(:harvest_date, :production, :transport, :product_id, :pictures, :description, harvests_attributes: [:id, :date, :quantity, :_destroy])
+      params.require(:crop).permit(:harvest_date, :transport, :product_id, :pictures, :description, harvests_attributes: [:id, :date, :quantity, :_destroy])
     end
   end

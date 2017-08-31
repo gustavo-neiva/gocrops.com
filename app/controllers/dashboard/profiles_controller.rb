@@ -37,6 +37,7 @@ class Dashboard::ProfilesController < ApplicationController
     params.require(:user).permit(:first_name, :last_name, :facebook_picture_url,
                                  :bio, :phone, :avatar, :avatar_cache,
                                  :farm_location, :farm_name, :farm_size, :farm_certification,
-                                 :farm_picture, :farm_picture_cache)
+                                 :farm_picture, :farm_picture_cache,
+                                 :certificate_issue_date, :certificate_expiration_date)
   end
 end

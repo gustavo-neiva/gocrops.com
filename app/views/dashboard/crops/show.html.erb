@@ -12,11 +12,31 @@
     </div>
     <div class="col-sm-4">
       <h3>Inventory</h3>
+<<<<<<< HEAD
       <div class="utility_card box__component box__section--padding">
         <p><%= @crop.harvests.sum(:quantity) %> kgs</p>
+=======
+      <div class="utility_card box-component box-section__padding">
+        <p id="inventory"><%= @crop.harvests.sum(:quantity) %> kgs</p>
+>>>>>>> a63826617fa524340c01106442c8b857a27c23a9
       </div>
-      <h3> Harvests </h3>
-      <%= render "harvest_form" %>
+        <table>
+          <tr>
+            <th> Dates</th>
+            <th> Quantity</th>
+          </tr>
+          <% @crop.harvests.each do |harvest| %>
+          <tr id="harvest_<%=harvest.id.to_s%>">
+            <td><%= harvest.date.strftime("%d/%m/%y") %></td>
+            <td><%= harvest.quantity %> kgs </td>
+            <td><%= link_to "Remove", dashboard_harvest_path(harvest), method: :delete, remote: true, class: "btn btn-danger" %></td>
+          </tr>
+          <% end %>
+        </table>
+      <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#newCocktailModal">
+       Add Harvest
+      </button>
+      <%= render "modal" %>
     </div>
   </div>
 </div>
