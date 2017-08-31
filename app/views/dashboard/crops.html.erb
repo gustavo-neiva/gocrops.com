@@ -21,8 +21,6 @@
           <td><%= c.harvests.sum(:quantity) %> kgs</td>
           <td class="text-right">
             <%= link_to "Open", dashboard_crop_path(c), class: "btn btn-success" %>
-            <%#= link_to "Edit", edit_dashboard_crop_path(c), class: "btn btn-primary" %>
-            <%#= link_to "Delete", dashboard_crop_path(c), method: :delete, class: "btn btn-danger"%>
           </td>
       </tr>
       <% end %>
