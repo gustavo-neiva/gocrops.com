@@ -7,7 +7,9 @@
 	<!-- PROFILE SECTION -->
 	<div class="section-main user__section">
     <%= cl_image_tag @user.user_avatar, class: "user__section__picture" %>
+    <% if current_user.first_name.present? && current_user.last_name.present? %>
     <h3 class="user__section__title"><%= "#{@user.first_name.capitalize} #{@user.last_name.capitalize}" %></h3>
+    <% end %>
 		<h4 class="user__section__subtitle">Bio</h4>
 		<p 	class="user__section__description"><%= @user.bio %></p>
 		<h4 class="user__section__subtitle">Contact</h4>
