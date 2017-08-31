@@ -23,7 +23,7 @@ Rails.application.routes.draw do
   end
 
   namespace :dashboard do
-    resources :harvests, only: :update
+    resources :harvests, only: :destroy
   end
 
   namespace :dashboard do

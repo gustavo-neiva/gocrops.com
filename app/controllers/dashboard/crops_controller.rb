@@ -27,10 +27,11 @@ class Dashboard::CropsController < ApplicationController
     def update
       if @crop.update(crop_params)
         flash[:notice] = "Crop successfully updated!"
-        redirect_to dashboard_crops_path
+        redirect_to dashboard_crop_path(@crop)
       else
         flash[:alert] = "Please try again and fill all required fields!"
-        redirect_to dashboard_crops_path
+        p @crop.errors
+        redirect_to dashboard_crop_path(@crop)
       end
     end
 

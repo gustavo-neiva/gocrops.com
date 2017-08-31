@@ -9,6 +9,7 @@
       <th>Product</th>
       <th>Description</th>
       <th>Transport</th>
+      <th>Inventory</th>
       <th></th>
     </thead>
     <tbody>
@@ -17,6 +18,7 @@
           <td><%= c.product.name %></td>
           <td><%= c.description %></td>
           <td><%= c.transport ? "Yes" : "No" %></td>
+          <td><%= c.harvests.sum(:quantity) %> kgs</td>
           <td class="text-right">
             <%= link_to "Open", dashboard_crop_path(c), class: "btn btn-success" %>
             <%= link_to "Edit", edit_dashboard_crop_path(c), class: "btn btn-primary" %>

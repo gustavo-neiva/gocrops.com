@@ -125,7 +125,7 @@ ActiveRecord::Schema.define(version: 20170830225409) do
 
   add_foreign_key "crops", "products"
   add_foreign_key "crops", "users"
-  add_foreign_key "harvests", "crops"
+  add_foreign_key "harvests", "crops", on_delete: :cascade
   add_foreign_key "price_informations", "products"
   add_foreign_key "products", "categories"
   add_foreign_key "sells", "crops"
