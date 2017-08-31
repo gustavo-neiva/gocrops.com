@@ -45,7 +45,6 @@
 		</div>
 		<div id="map" class="farm__section__map" style="width: 100%; height: 100%;"></div>
 	</div>
-<<<<<<< HEAD
 	<!-- CERTIFICATE SECTION -->
 	<div class="aside certificate__section box__component box__section--margin--b box__section--padding">
 		<h4 class="certificate__section__title">Certificate</h4>
@@ -53,25 +52,13 @@
 			<i class="fa fa-check" aria-hidden="true"></i>
 			<dl>
 				<dt>Issue date</dt>
-				<dd>21/10/2014</dd>
+				<dd><%= current_user.certificate_issue_date %></dd>
 			</dl>
 			<dl>
 				<dt>Expiration date</dt>
-				<dd>21/10/2014</dd>
+				<dd><%= current_user.certificate_expiration_date %></dd>
 			</dl>
 		</div>
-=======
-	<div class="aside box-component box-section box-section__padding">
-		<h4 class="sub-section-title__tag">Certificate</h4>
-		<dl>
-			<dt class="sub-section-title">Issue date</dt>
-			<dd><%= current_user.certificate_issue_date %></dd>
-		</dl>
-		<dl>
-			<dt>Expiration date</dt>
-			<dd><%= current_user.certificate_expiration_date %></dd>
-		</dl>
->>>>>>> a63826617fa524340c01106442c8b857a27c23a9
 	</div>
 </div>
 
