@@ -1,41 +1,44 @@
-.navbar-dashboard {
+.navbar__dashboard {
   box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
   background: $primary-color;
   transition: all 0.3s ease;
   height: 70px;
-  padding: 0 2em;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
+.navbar__user__info {
+  display: none;
+}
+
 /* Logo */
-.navbar-dashboard-brand img {
+.navbar__dashboard__brand img {
   height: 45px;
 }
 
 /* User Avatar */
-.navbar-dashboard .avatar {
+.navbar__dashboard .avatar {
   height: 40px;
   width: 40px;
   border-radius: 50%;
 }
 
 /* Right section */
-.navbar-dashboard-right {
+.navbar__dashboard__right {
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
 }
 
 /* Basic navbar item */
-.navbar-dashboard-item {
+.navbar__dashboard__item {
   cursor: pointer;
   padding: 0 20px;
 }
 
 /* Navbar link */
-.navbar-dashboard-link {
+.navbar__dashboard__link {
   color: $background-super-light;
   font-size: 14px;
   text-transform: uppercase;
@@ -44,22 +47,38 @@
   line-height: 70px;
 }
 
-.navbar-dashboard-link__active {
+.navbar__dashboard__link--active {
   border-bottom: 8px solid $background-super-light;
 }
 
-.navbar-dashboard-link:hover {
+.navbar__dashboard__link:hover {
   color: $background-tb-header;
   text-decoration: none;
   border-bottom: 8px solid $background-tb-header;
 }
 
-.navbar-dashboard-link__logout:hover {
+.navbar__dashboard__link--logout:hover {
   color: $red;
   border-bottom-color: $red;
 }
 
-.name_dashboard_navbar {
+.navbar__dashboard__name {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0;
   color: white;
-  font-size: 22px;
+  font-weight: 700;
+  font-size: 1.6em;
+}
+
+@media (min-width: 500px) {
+  .navbar__dashboard {
+    padding: 0 2em;
+  }
+}
+
+@media (min-width: 730px) {
+  .navbar__user__info:first-child {
+    display: block;
+  }
 }

@@ -29,7 +29,7 @@ class ApplicationController < ActionController::Base
     # Checks if users is in devise#edit
     # Add profile class params to active navbar
     if params[:controller] == "devise/registrations" && params[:action] == "edit"
-      @profile_class = "navbar-dashboard-link__active"
+      @profile_class = "navbar__dashboard__link--active"
     end
   end
 

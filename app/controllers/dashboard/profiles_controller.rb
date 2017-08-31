@@ -26,7 +26,7 @@ class Dashboard::ProfilesController < ApplicationController
   def active_navbar
     # Checks if users is in devise#edit
     # Add profile class params to active navbar
-    @profile_class = "navbar-dashboard-link__active"
+    @profile_class = "navbar__dashboard__link--active"
   end
 
   def set_user

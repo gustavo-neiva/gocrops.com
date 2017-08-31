@@ -1,31 +1,116 @@
-// USER PROFILE STYLES
+// **********************
+// GENERAL PROFILE STYLES
+// **********************
 
-.box-section {
-	margin-bottom: 15px;
+.title__tag {
+	font-size: 1em;
+	text-transform: uppercase;
+	color: $secondary-text-color;
 }
 
-.profile-index {
-	h3, h4, p, dt, dd {
-		color: darken($primary-text-color, 10%);
-	}
+// ********************
+// USER SECTION @ PROFILE
+// ********************
+
+.user__section {
+	@extend .box__component;
+	display: grid;
+	grid-template-columns: 2fr 3fr;
+	grid-auto-rows: min-content;
+	grid-gap: 1em;
+	padding: 1em;
+	align-self: flex-start;
 }
 
-.user-profile-picture {
+.user__section__picture {
+	grid-column: 1 / 2;
+	grid-row: 1 / span 6;
+	width: 100%;
 	border-radius: 5px;
-	margin-top: 10px;
 }
 
-@media (min-width: 500px) {
-  .user-profile-picture {
-    max-width: 40%;
-  }
+.user__section__contact {
+	list-style: none;
+	padding-left: 0;
 }
 
-.farm-profile-picture {
-	height: auto;
+h4.user__section__subtitle {
+	@extend .title__tag;
+	margin-bottom: 0;
+}
+
+.user__section__contact p {
+	margin-left: 1em;
+	border-bottom: 1px solid $secondary-text-color;
+}
+
+// ********************
+// USER FARM SECTION
+// ********************
+
+.farm__section {
+	@extend .box__component;
+	display: grid;
+	grid-template-columns: 4fr 1.5fr;
+	grid-template-rows: 200px auto;
+	grid-template-areas:
+	"f_pic f_pic"
+	"f_info f_map";
+}
+
+.farm__section__picture {
+	grid-area: f_pic;
+	min-height: 100%;
+	max-width: 100%;
+	overflow: hidden;
 	border-radius: 5px 5px 0 0;
 }
 
-.aside dl {
-	display: inline-block;
+.farm__section__picture img {
+	max-width: 100%;
+}
+
+.farm__section__info {
+	grid-area: f_info;
+	padding: 1em;
+}
+
+.farm__section__info h4 {
+	@extend .title__tag;
+}
+
+.farm__section__map {
+	grid-area: f_map;
+}
+
+
+// ********************
+// CERTIFICATION FARM SECTION
+// ********************
+
+.certificate__section {
+	@extend .box__component;
+	padding: 1em;
+	// display: flex;
+	// flex-direction: column;
+}
+
+h4.certificate__section__title {
+	@extend .title__tag;
+}
+
+.certificate__info {
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+}
+
+.certificate__info i {
+	color: $primary-color;
+	font-size: 4em;
+}
+
+.certificate__info dd {
+	font-size: 1.4em;
+	color: $secondary-text-color;
 }

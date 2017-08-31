@@ -1,15 +1,16 @@
-<div class="navbar-dashboard">
+<div class="navbar__dashboard">
   <!-- Avatar -->
-  <div class="navbar-dashboad-item">
+  <div class="navbar__dashboad__item navbar__user__info">
       <%= cl_image_tag current_user.user_avatar, class: "avatar" %>
-      <span class="name_dashboard_navbar"><%= "#{current_user.first_name}  #{current_user.last_name}"%></span>
+      <p class="navbar__dashboard__item navbar__dashboard__name"><%= "#{current_user.first_name.capitalize}  #{current_user.last_name.capitalize}"%></p>
   </div>
 
+
   <!-- Right Navigation -->
-  <div class="navbar-dashboard-right">
-    <%= link_to "Dashboard", dashboard_path, class: "navbar-dashboard-item navbar-dashboard-link #{@dashboard_class}" %>
-    <%= link_to "Crops",  dashboard_crops_path, class: "navbar-dashboard-item navbar-dashboard-link #{@crops_class}" %>
-    <%= link_to "Profile", dashboard_profile_path, class: "navbar-dashboard-item navbar-dashboard-link #{@profile_class}" %>
-    <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "navbar-dashboard-item navbar-dashboard-link navbar-dashboard-link__logout" %>
+  <div class="navbar__dashboard__right">
+    <%= link_to "Dashboard", dashboard_path, class: "navbar__dashboard__item navbar__dashboard__link #{@dashboard_class}" %>
+    <%= link_to "Crops",  dashboard_crops_path, class: "navbar__dashboard__item navbar__dashboard__link #{@crops_class}" %>
+    <%= link_to "Profile", dashboard_profile_path, class: "navbar__dashboard__item navbar__dashboard__link #{@profile_class}" %>
+    <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "navbar__dashboard__item navbar__dashboard__link navbar__dashboard__link--logout" %>
   </div>
 </div>

@@ -46,6 +46,10 @@
   		"main aside aside";
   	grid-gap: 15px;
   	padding: 1em 2em;
+
+		h3, h4, p, dt, dd {
+			color: darken($primary-text-color, 10%);
+		}
   }
 }
 

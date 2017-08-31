@@ -1,5 +1,5 @@
 <%= simple_form_for @crop, url: dashboard_crop_path(@crop) do |f| %>
-  <div class="box-component box-section__padding">
+  <div class="box__component box__section--padding">
     <div id="harvests">
       <div class="links">
         <%= link_to_add_association 'Add harvest', f, :harvests, class: "btn btn-primary" %>
