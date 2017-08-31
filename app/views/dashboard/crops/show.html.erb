@@ -13,18 +13,18 @@
     <div class="col-sm-4">
       <h3>Inventory</h3>
       <div class="utility_card box-component box-section__padding">
-        <p><%= @crop.harvests.sum(:quantity) %> kgs</p>
+        <p id="inventory"><%= @crop.harvests.sum(:quantity) %> kgs</p>
       </div>
         <table>
           <tr>
             <th> Dates</th>
             <th> Quantity</th>
           </tr>
-          <% @crop.harvests.each_with_index do |harvest| %>
-          <tr>
+          <% @crop.harvests.each do |harvest| %>
+          <tr id="harvest_<%=harvest.id.to_s%>">
             <td><%= harvest.date.strftime("%d/%m/%y") %></td>
             <td><%= harvest.quantity %> kgs </td>
-            <td><%#= link_to "Remove", dashboard_crops_path(harvest), class: "btn btn-danger" %></td>
+            <td><%= link_to "Remove", dashboard_harvest_path(harvest), method: :delete, remote: true, class: "btn btn-danger" %></td>
           </tr>
           <% end %>
         </table>

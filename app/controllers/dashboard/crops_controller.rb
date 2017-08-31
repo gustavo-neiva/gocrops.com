@@ -28,7 +28,7 @@ class Dashboard::CropsController < ApplicationController
 
     def update
       if @crop.update(crop_params)
-        redirect_to dashboard_crops_path
+        redirect_to dashboard_crop_path(@crop)
       else
         render :new
       end
