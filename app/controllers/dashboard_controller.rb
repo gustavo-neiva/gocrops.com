@@ -16,6 +16,7 @@ class DashboardController < ApplicationController
   def crops
     @crops_class = "navbar-dashboard-link__active"
     @crops = current_user.crops
+    @crop = Crop.new
   end
 
   def profile
