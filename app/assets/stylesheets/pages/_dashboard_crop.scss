@@ -1,0 +1,62 @@
+.crop__container {
+  padding: 1em 2em;
+
+  h1, h2 {
+    color: $primary-text-color;
+  }
+}
+
+.crop__details {
+  @extend .box__component;
+  h4 {
+    color: $primary-text-color;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    font-size: 1em;
+  }
+}
+
+.crop__datails__control {
+  position: absolute;
+  top: 15px;
+  right: 30px;
+}
+
+.crop__inventory {
+  @extend .box__component;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.crop__inventory p {
+  color: $primary-color;
+  font-size: 2em;
+  font-weight: 700;
+  margin: 0;
+}
+
+.crop__harvest {
+  @extend .box__component;
+}
+
+.crop__details,
+.crop__inventory,
+.crop__harvest {
+  padding: 1em;
+}
+
+.harvest__modal--add {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.harvest__modal--add .form-group {
+  margin-bottom: 0;
+}
+
+.harvest__modal__quantity {
+  flex: 0 0 30%;
+}
