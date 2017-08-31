@@ -3,8 +3,8 @@
   <div class="navbar__dashboad__item navbar__user__info">
       <%= cl_image_tag current_user.user_avatar, class: "avatar" %>
       <% if current_user.first_name.present? && current_user.last_name.present? %>
-             <p class="navbar__dashboard__item navbar__dashboard__name"><%= "#{current_user.first_name.capitalize}  #{current_user.last_name.capitalize}"%></p>
-           <% end %>
+        <p class="navbar__dashboard__item navbar__dashboard__name"><%= "#{current_user.first_name.capitalize}  #{current_user.last_name.capitalize}"%></p>
+      <% end %>
   </div>
 
 
