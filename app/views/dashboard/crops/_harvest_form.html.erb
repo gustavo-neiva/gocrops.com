@@ -1,5 +1,5 @@
 <%= simple_form_for @crop, url: dashboard_crop_path(@crop) do |f| %>
-  <div class="box-component box__section--padding">
+  <div class="box__component box__section--padding">
     <div id="harvests">
       <%= f.simple_fields_for :harvests do |harvest| %>
         <%= render 'harvest_fields', f: harvest %>

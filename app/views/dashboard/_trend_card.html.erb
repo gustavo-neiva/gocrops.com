@@ -1,7 +1,7 @@
-<div class="trend box-component">
+<div class="trend box__component">
   <div class="trend__card js-trend__card">
-    <span class="trend__icon trend--status--<%= product.set_trend_status %> ic-<%=product.name.split.join.downcase%>"></span>
-    <span class="trend__name trend--status--<%= product.set_trend_status %>">
+    <span class="trend__icon trend__status--<%= product.set_trend_status %> ic-<%=product.name.split.join.downcase%>"></span>
+    <span class="trend__name trend__status--<%= product.set_trend_status %>">
       <%= product.name.capitalize %>
     </span>
     <p class="trend__current__title">Current Month</p>
@@ -9,10 +9,10 @@
       €<%= product.current_month %>/kg
     </span>
     <p class="trend__next__title">Next Month</p>
-    <span class="trend__next__value trend--status--<%= product.set_trend_status %>">
+    <span class="trend__next__value trend__status--<%= product.set_trend_status %>">
       €<%= product.forecast_next_month %>/kg
     </span>
-    <span class="trend__arrow trend--status--<%= product.set_trend_status %> wi wi-direction-<%= product.set_trend_status %>-right">
+    <span class="trend__arrow trend__status--<%= product.set_trend_status %> wi wi-direction-<%= product.set_trend_status %>-right">
     </span>
   </div>
   <div class="trend__graph hidden">

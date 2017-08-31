@@ -2,12 +2,10 @@
 // GENERAL PROFILE STYLES
 // **********************
 
-.responsive-image {
-	width: 100%;
-}
-
-.box__section--margin--b{
-	margin-bottom: 15px;
+.title__tag {
+	font-size: 1em;
+	text-transform: uppercase;
+	color: $secondary-text-color;
 }
 
 // ********************
@@ -15,6 +13,7 @@
 // ********************
 
 .user__section {
+	@extend .box__component;
 	display: grid;
 	grid-template-columns: 2fr 3fr;
 	grid-auto-rows: min-content;
@@ -35,10 +34,9 @@
 	padding-left: 0;
 }
 
-.user__section__subtitle {
+h4.user__section__subtitle {
+	@extend .title__tag;
 	margin-bottom: 0;
-	font-size: 1.2em;
-	font-weight: 700;
 }
 
 .user__section__contact p {
@@ -50,20 +48,69 @@
 // USER FARM SECTION
 // ********************
 
-.farm-profile-picture {
-	height: auto;
+.farm__section {
+	@extend .box__component;
+	display: grid;
+	grid-template-columns: 4fr 1.5fr;
+	grid-template-rows: 200px auto;
+	grid-template-areas:
+	"f_pic f_pic"
+	"f_info f_map";
+}
+
+.farm__section__picture {
+	grid-area: f_pic;
+	min-height: 100%;
+	max-width: 100%;
+	overflow: hidden;
 	border-radius: 5px 5px 0 0;
 }
 
-.aside dl {
-	display: inline-block;
+.farm__section__picture img {
+	max-width: 100%;
+}
+
+.farm__section__info {
+	grid-area: f_info;
+	padding: 1em;
+}
+
+.farm__section__info h4 {
+	@extend .title__tag;
+}
+
+.farm__section__map {
+	grid-area: f_map;
 }
 
 
-// CHANGE NAME OF THIS TAG TO REFLECT CONTENT
-.sub-section-title__tag {
-	text-transform: uppercase;
-	letter-spacing: 3px;
-	color: $secondary-text-color !important;
-	font-size: 0.9em;
+// ********************
+// CERTIFICATION FARM SECTION
+// ********************
+
+.certificate__section {
+	@extend .box__component;
+	padding: 1em;
+	// display: flex;
+	// flex-direction: column;
+}
+
+h4.certificate__section__title {
+	@extend .title__tag;
+}
+
+.certificate__info {
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+}
+
+.certificate__info i {
+	color: $primary-color;
+	font-size: 4em;
+}
+
+.certificate__info dd {
+	font-size: 1.4em;
+	color: $secondary-text-color;
 }

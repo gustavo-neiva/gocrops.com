@@ -116,15 +116,15 @@
 	text-align: center;
 }
 
-.trend--status--up {
+.trend__status--up {
 	color: $primary-color;
 }
 
-.trend--status--stable {
+.trend__status--stable {
 	color: $support-stable-color;
 }
 
-.trend--status--down {
+.trend__status--down {
 	color: $support-down-color;
 }
 

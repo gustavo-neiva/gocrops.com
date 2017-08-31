@@ -48,7 +48,7 @@ class Product < ApplicationRecord
 
   end
 
-  # Return a string to set trend--status-- class
+  # Return a string to set trend__status-- class
   def set_trend_status
     product_prices = self.price_informations.map { |o| o.market_price.to_f }
     product_std = product_prices.standard_deviation / 100
