@@ -8,18 +8,18 @@ class DashboardController < ApplicationController
       @end = params[:end_date]
       @product_id = params[:product_id]
     end
-    @dashboard_class = "navbar-dashboard-link__active"
+    @dashboard_class = "navbar__dashboard__link--active"
     @products = Product.all
 
   end
 
   def crops
-    @crops_class = "navbar-dashboard-link__active"
+    @crops_class = "navbar__dashboard__link--active"
     @crops = current_user.crops
   end
 
   def profile
-    @profile_class = "navbar-dashboard-link__active"
+    @profile_class = "navbar__dashboard__link--active"
     @user = current_user
     @user_coordinates = { lat: @user.latitude, lng: @user.longitude }
   end

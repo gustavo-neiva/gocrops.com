@@ -6,7 +6,7 @@ class Dashboard::CropsController < ApplicationController
 
     # def index
     #   @crops = current_user.crops
-    #   @crops_class = "navbar-dashboard-link__active"
+    #   @crops_class = "navbar__dashboard__link--active"
     # end
 
     def new
@@ -45,7 +45,7 @@ class Dashboard::CropsController < ApplicationController
     private
 
     def active_navbar
-      @crops_class = "navbar-dashboard-link__active"
+      @crops_class = "navbar__dashboard__link--active"
     end
 
     def set_crop
