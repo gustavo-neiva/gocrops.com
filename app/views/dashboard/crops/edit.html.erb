@@ -1,8 +1,0 @@
-<h2>Edit</h2>
-
-<%= simple_form_for @crop, url: dashboard_crop_path do |f| %>
-  <%= f.input :description, as: :text %>
-  <%= f.input :transport, as: :boolean %>
-  <%= f.submit  %>
-<% end %>
-<%= link_to "Return", dashboard_crops_path%>
