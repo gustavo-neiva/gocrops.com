@@ -2,8 +2,8 @@ require 'descriptive_statistics'
 
 class Product < ApplicationRecord
   belongs_to :category
-  has_many :crops
-  has_many :price_informations
+  has_many :crops, dependent: :destroy
+  has_many :price_informations, dependent: :destroy
 
   validates :name, presence: true
   validates :category, presence: true, uniqueness: { scope: :name}
