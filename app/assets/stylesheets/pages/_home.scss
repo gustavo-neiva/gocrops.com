@@ -1,1 +1,70 @@
 // Specific CSS for your home-page
+.home__stats {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: $primary-color;
+  color: $background-super-light;
+  height: 12em;
+  text-align: center;
+}
+
+.home__stats p {
+  font-size: 2.5em;
+  font-weight: 700;
+  line-height: 1em;
+}
+
+.home__stats span {
+  font-size: 1em;
+  font-weight: 100;
+  display: block;
+}
+
+.home__features {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 30px;
+  padding: 1em;
+  background-color: $background-super-light;
+}
+
+.home__features {
+  h2, h4 {
+    color: $primary-color;
+    font-weight: 700;
+  }
+}
+
+.home__features h2 {
+  grid-column: 1 / span 2;
+  grid-row: 1;
+  text-align: center;
+}
+
+.home__features__item {
+  width: 70%;
+}
+
+.home__features__img {
+  grid-column: 1 / 2;
+  grid-row: 2 / span 4;
+  align-items: flex-end;
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.home__features__img--front {
+  grid-column: 1;
+  grid-row: 1;
+  justify-self: flex-end;
+  z-index: 99;
+  height: 300px;
+}
+
+.home__features__img--back {
+  grid-column: 1;
+  grid-row: 1;
+  justify-self: center;
+  height: 500px;
+}

@@ -1,7 +1,47 @@
 <%= content_for :title, "GoCrops!" %>
+
 <%= render 'banner' %>
 
-<div id="map" style="width: 100%; height: 600px;"></div>
+<div class="home__stats">
+  <p>250<span>farmers</span></p>
+  <p>5000t<span>organic food</span></p>
+  <p>$1.5mi<span>shared revenue</span></p>
+  <p>34%<span>profit increase</span></p>
+</div>
+
+<div class="home__features">
+  <h2>Grow Digital</h2>
+  <div class="home__features__img">
+    <%= image_tag "home__phone--front", class: "home__features__img--front" %>
+    <%= image_tag "home__phone--back", class: "home__features__img--back" %>
+  </div>
+  <div class="home__features__item">
+    <h4>no smartphone required</h4>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+  </div>
+  <div class="home__features__item">
+    <h4>easy and stable access</h4>
+    <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+  </div>
+  <div class="home__features__item">
+    <h4>get all information you need</h4>
+    <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  </div>
+</div>
+
+<div id="map" class="home__map" style="width: 100%; height: 250px;"></div>
+
+<div class="home__users">
+  <h2>Meet Out Friends</h2>
+  <div class="home__users__picture"></div>
+  <p class="home__users__testimony"></p>
+  <div class="home__users__picture"></div>
+  <p class="home__users__testimony"></p>
+  <div class="home__users__picture"></div>
+  <p class="home__users__testimony"></p>
+</div>
+
+<div class="home__secondary__cta">Sing up now. It's free</div>
 
 <% content_for(:after_js) do %>
   <%= javascript_tag do %>
