@@ -5,7 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable,
          :omniauthable, omniauth_providers: [:facebook]
 
-  has_many :crops
+  has_many :crops, dependent: :destroy
   # validates :farm_location, presence: true
   mount_uploader :avatar, PictureUploader
   mount_uploader :farm_picture, PictureUploader
