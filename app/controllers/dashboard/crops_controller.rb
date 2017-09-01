@@ -25,7 +25,7 @@ class Dashboard::CropsController < ApplicationController
     end
 
     def update
-      if @crop.update(crop_params)
+      if params[:crop].present? && @crop.update(crop_params)
         flash[:notice] = "Crop successfully updated!"
         redirect_to dashboard_crop_path(@crop)
       else
