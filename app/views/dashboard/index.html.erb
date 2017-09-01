@@ -6,7 +6,7 @@
 	<div class="section-main">
 
     <% if current_user.crops.present?  %>
-      <% current_user.crops.each do |crop| %>
+      <% current_user.crops.joins(:product).order("products.name").each do |crop| %>
         <%= render 'trend_card', product: crop.product %>
       <% end %>
     <% else %>
