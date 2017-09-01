@@ -64,7 +64,7 @@ round = 0
     harvest = Harvest.new(
       crop: crop,
       quantity: (1..9999).to_a.sample,
-      date: rand(Date.civil(2017, 8, 28)..Date.civil(2020, 12, 31))
+      date: rand(Date.civil(2017, 9, 5)..Date.civil(2020, 12, 31))
     )
     harvest.save!
   end
