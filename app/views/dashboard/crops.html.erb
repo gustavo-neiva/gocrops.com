@@ -13,7 +13,7 @@
       <th></th>
     </thead>
     <tbody>
-      <% @crops.each do |c|  %>
+      <% @crops.joins(:product).order("products.name").each do |c|  %>
       <tr>
           <td><%= c.product.name %></td>
           <td><%= c.transport ? "Yes" : "No" %></td>
