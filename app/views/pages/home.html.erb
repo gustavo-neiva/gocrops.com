@@ -33,15 +33,25 @@
 
 <div class="home__users">
   <h2>Meet Out Friends</h2>
-  <div class="home__users__picture"></div>
-  <p class="home__users__testimony"></p>
-  <div class="home__users__picture"></div>
-  <p class="home__users__testimony"></p>
-  <div class="home__users__picture"></div>
-  <p class="home__users__testimony"></p>
+  <div class="home__users__picture">
+    <%= image_tag "home_users_woman" %>
+  </div>
+  <p class="home__users__testimony">
+    <span>"</span>Meet Patricia, a foodie lovin’ farmer who one of our GoCrops in Brasília. Patricia started GoCrops in 2017 and since then she has seen her products being connected to more markets than ever."
+  </p>
+  <div class="home__users__picture">
+    <%= image_tag "home_users_man" %>
+  </div>
+  <p class="home__users__testimony">
+    <span>"</span>It all started with a life-changing phone call. Three months ago, Zé da Cebola went from having only one market access via a single middleman to selling its organic onions to 3 online food markets. Our app helped him organize his production and having more tools to take better decisions"
+  </p>
+
 </div>
 
-<div class="home__secondary__cta">Sing up now. It's free</div>
+<div class="home__secondary__cta">
+  <%= link_to "Sing up now. It's free", new_user_registration_path, class:"banner__cta btn-primary-cta" %>
+</div>
+
 
 <% content_for(:after_js) do %>
   <%= javascript_tag do %>
