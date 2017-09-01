@@ -182,3 +182,18 @@
   width: 100%;
   text-align: center;
 }
+
+.section__main--empty {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 20em;
+  color: $primary-text-color;
+}
+
+.section__main--empty i {
+  font-size: 4em;
+  margin-bottom: 15px;
+  color: $secondary-text-color;
+}
