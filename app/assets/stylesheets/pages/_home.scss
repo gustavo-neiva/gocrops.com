@@ -26,10 +26,8 @@
   grid-template-columns: 1fr 1fr;
   grid-gap: 30px;
   padding: 1em;
+  margin-top: 15px;
   background-color: $background-super-light;
-}
-
-.home__features {
   h2, h4 {
     color: $primary-color;
     font-weight: 700;
@@ -71,10 +69,11 @@
 
 .home__users {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1.4fr;
   grid-auto-rows: min-content;
   grid-gap: 30px;
   padding: 1em;
+  margin-top: 15px;
   background-color: $background-super-light;
   h2, h4 {
     color: $primary-color;
@@ -96,16 +95,18 @@
 
 .home__users__picture img {
   width: 100%;
+  border-radius: 5px;
 }
 
 .home__users__testimony {
-  padding-right: 10em;
+  padding-right: 12em;
 }
 
 .home__users__testimony span {
   color: $primary-color;
   font-weight: 700;
   font-size: 3em;
+  line-height: 1em;
 }
 
 .home__secondary__cta {
