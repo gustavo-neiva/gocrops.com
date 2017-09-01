@@ -4,16 +4,24 @@
 <div class="grid-dashboard__index">
   <h2 class="section-main-title section-title">My Crops Trends</h2>
 	<div class="section-main">
-    <% current_user.crops.each do |crop| %>
 
-      <%= render 'trend_card', product: crop.product %>
-
+    <% if current_user.crops.present?  %>
+      <% current_user.crops.each do |crop| %>
+        <%= render 'trend_card', product: crop.product %>
+      <% end %>
+    <% else %>
+      <div class="section__main--empty">
+        <i class="fa fa-area-chart" aria-hidden="true"></i>
+        <h4>Almost there!</h4>
+        <p>Add a crop to track its prices :)</p>
+        <%= link_to "Add a Crop",  dashboard_crops_path, class: "btn btn-primary-cta" %>
+      </div>
     <% end %>
 	</div>
   <h2 class="section-sidebar-title section-title">Utilities</h2>
 	<div class="section-sidebar grid__utilities">
 
-    <%= render 'utilities' %> 
+    <%= render 'utilities' %>
 
 	</div>
 </div>
