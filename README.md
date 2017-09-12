@@ -6,9 +6,9 @@ For the MVP, all our price data was gathered from "https://ec.europa.eu/agricult
 
 GoCrops was developed in two weeks in Le Wagon coding bootcamp batch #84 in Rio de Janeiro, Brazil, by:
 
-<a href="https://github.com/eovento">Daniel Ribeiro</a>
-<a href="https://github.com/JohannaCAW">Johanna Wagner</a>
-<a href="https://github.com/luizgzn">Luiz Neiva</a>
+<a href="https://github.com/eovento">Daniel Ribeiro</a><br>
+<a href="https://github.com/JohannaCAW">Johanna Wagner</a><br>
+<a href="https://github.com/luizgzn">Luiz Neiva</a><br>
 <a href="https://github.com/ronalson">Ronalson Filho</a>
 
 
