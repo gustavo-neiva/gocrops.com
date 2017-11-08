@@ -1,6 +1,6 @@
 module ApplicationHelper
   def weather_object
-      if session[:weather].present?
+      if session[:weather].present? && session[:weather]["cod"].to_i == 200
         return session[:weather]
       else
         return {"coord"=>{"lon"=>-43.21, "lat"=>-22.9},
